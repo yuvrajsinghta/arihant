@@ -1,1922 +1,945 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Arihant Heritage — Luxury Marble Temples Since 1998</title>
-<meta name="description" content="India's most trusted luxury marble temple atelier. Bespoke hand-carved marble temples, pooja rooms & sacred spaces. 950+ projects delivered across 30+ countries.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#18140F">
+  <title>Arihant Heritage — Luxury Marble Temples Since 1998</title>
+  <meta name="description" content="India's most trusted luxury marble temple atelier. Bespoke hand-carved marble temples, pooja rooms & sacred spaces. 950+ projects, 30+ countries.">
 
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ink:    '#18140F',
-          'ink-mid': '#2E2920',
-          'ink-light': '#5C5448',
-          gold:   '#B89A5A',
-          'gold-l': '#D4B87A',
-          'gold-p': '#EAD8A8',
-          ivory:  '#FAF7F1',
-          'ivory-w': '#F4EDE0',
-          'ivory-m': '#E8DDD0',
-          'ivory-d': '#D8CBBA',
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          'xs': '400px',
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+          '2xl': '1440px',
         },
-        fontFamily: {
-          serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-          sans:  ['Tenor Sans', 'sans-serif'],
-        },
+        extend: {
+          colors: {
+            ink:        '#18140F',
+            'ink-2':    '#2E2920',
+            'ink-3':    '#3D3730',
+            'ink-4':    '#5C5448',
+            gold:       '#B89A5A',
+            'gold-2':   '#D4B87A',
+            'gold-3':   '#EAD8A8',
+            'gold-4':   '#7A6035',
+            ivory:      '#FAF7F1',
+            'ivory-2':  '#F4EDE0',
+            'ivory-3':  '#E8DDD0',
+            'ivory-4':  '#D8CBBA',
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            body:    ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            accent:  ['DM Serif Display', 'Georgia', 'serif'],
+          },
+          animation: {
+            'ticker':    'ticker 28s linear infinite',
+            'ticker-2':  'ticker 22s linear infinite',
+            'fade-up':   'fadeUp 0.9s ease forwards',
+            'fade-in':   'fadeIn 1s ease forwards',
+            'scale-in':  'scaleIn 0.7s cubic-bezier(0.16,1,0.3,1) forwards',
+            'shimmer':   'shimmer 2.5s ease-in-out infinite',
+            'float':     'float 6s ease-in-out infinite',
+            'spin-slow': 'spin 22s linear infinite',
+          },
+          keyframes: {
+            ticker:   { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } },
+            fadeUp:   { from: { opacity: '0', transform: 'translateY(32px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+            fadeIn:   { from: { opacity: '0' }, to: { opacity: '1' } },
+            scaleIn:  { from: { opacity: '0', transform: 'scale(0.92)' }, to: { opacity: '1', transform: 'scale(1)' } },
+            shimmer:  { '0%,100%': { opacity: '0.4' }, '50%': { opacity: '0.9' } },
+            float:    { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+          },
+          boxShadow: {
+            'gold':    '0 8px 40px rgba(184,154,90,0.25)',
+            'gold-lg': '0 16px 64px rgba(184,154,90,0.35)',
+            'ink':     '0 8px 40px rgba(24,20,15,0.2)',
+            'ink-lg':  '0 24px 80px rgba(24,20,15,0.35)',
+            'card':    '0 2px 20px rgba(24,20,15,0.07)',
+            'card-lg': '0 12px 48px rgba(24,20,15,0.12)',
+          },
+          transitionTimingFunction: {
+            'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+            'expo':   'cubic-bezier(0.16, 1, 0.3, 1)',
+          }
+        }
       }
     }
-  }
-</script>
+  </script>
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
-/* ══════════════════════════════════════════
-   ARIHANT HERITAGE — FINAL BUILD
-   Mobile-First · Tilak-Quality · ₹20L+ Trust
-══════════════════════════════════════════ */
-
-:root {
-  --gold: #B89A5A;
-  --gold-l: #D4B87A;
-  --gold-p: #EAD8A8;
-  --ink: #18140F;
-  --ink-mid: #2E2920;
-  --ink-light: #5C5448;
-  --ivory: #FAF7F1;
-  --ivory-w: #F4EDE0;
-  --ivory-m: #E8DDD0;
-  --ivory-d: #D8CBBA;
-  --nav-h: 64px;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body { font-family: 'Tenor Sans', sans-serif; background: var(--ivory); color: var(--ink); overflow-x: hidden; }
-img { display: block; max-width: 100%; }
-a { text-decoration: none; color: inherit; }
-button { font-family: inherit; }
-
-/* ── ANNOUNCEMENT ── */
-.ann-bar {
-  background: var(--ink);
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 10px 0;
-}
-.ann-track {
-  display: inline-flex;
-  animation: ticker 28s linear infinite;
-}
-.ann-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 20px;
-  padding: 0 40px;
-  font-size: 10px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.45);
-}
-.ann-item b { color: var(--gold-p); font-weight: 400; }
-.ann-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* ── NAVBAR ── */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: var(--nav-h);
-  background: rgba(250,247,241,.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(184,154,90,.15);
-  transition: box-shadow .4s;
-}
-.navbar.scrolled { box-shadow: 0 4px 32px rgba(24,20,15,.1); }
-.nav-inner {
-  max-width: 1320px;
-  margin: 0 auto;
-  height: 100%;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  min-width: 0;
-}
-.nav-logo img {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-.nav-logo-text { min-width: 0; }
-.nav-logo-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--ink);
-  letter-spacing: .04em;
-  white-space: nowrap;
-  line-height: 1.2;
-}
-.nav-logo-sub {
-  font-size: 9px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 2px;
-  white-space: nowrap;
-}
-.nav-links {
-  display: none;
-  align-items: center;
-  list-style: none;
-  gap: 0;
-}
-.nav-links a {
-  display: block;
-  font-size: 11px;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: var(--ink-light);
-  padding: 6px 14px;
-  position: relative;
-  transition: color .2s;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 14px; right: 14px;
-  height: 1px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transition: transform .3s;
-}
-.nav-links a:hover { color: var(--ink); }
-.nav-links a:hover::after { transform: scaleX(1); }
-.nav-cta {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: var(--gold);
-  border: 1px solid var(--gold);
-  color: var(--ink);
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  transition: background .3s, color .3s, border-color .3s;
-  white-space: nowrap;
-}
-.nav-cta:hover { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
-.ham-btn {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  padding: 6px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-.ham-btn span {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background: var(--ink);
-  transition: all .35s;
-  transform-origin: center;
-}
-
-/* ── DRAWER ── */
-.drawer-mask {
-  position: fixed;
-  inset: 0;
-  z-index: 1050;
-  background: rgba(24,20,15,.8);
-  backdrop-filter: blur(4px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .4s;
-}
-.drawer-mask.open { opacity: 1; pointer-events: all; }
-.drawer {
-  position: fixed;
-  top: 0; right: 0; bottom: 0;
-  width: min(340px, 100vw);
-  z-index: 1100;
-  background: var(--ink);
-  display: flex;
-  flex-direction: column;
-  transform: translateX(100%);
-  transition: transform .42s cubic-bezier(.4,0,.2,1);
-  overflow-y: auto;
-}
-.drawer.open { transform: translateX(0); }
-.drawer-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-}
-.drawer-brand {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-weight: 300;
-  color: #fff;
-}
-.drawer-x {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(255,255,255,.15);
-  background: none;
-  color: rgba(255,255,255,.5);
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: border-color .2s, color .2s;
-}
-.drawer-x:hover { border-color: var(--gold); color: var(--gold); }
-.drawer-nav { flex: 1; padding: 8px 0; }
-.drawer-nav a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 24px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  font-weight: 300;
-  color: rgba(255,255,255,.65);
-  border-bottom: 1px solid rgba(255,255,255,.04);
-  transition: color .2s, padding-left .3s;
-}
-.drawer-nav a:hover { color: #fff; padding-left: 32px; }
-.drawer-nav a em { font-family: 'Tenor Sans', sans-serif; font-size: 11px; font-style: normal; color: var(--gold); opacity: 0; transition: opacity .2s; }
-.drawer-nav a:hover em { opacity: 1; }
-.drawer-foot {
-  padding: 20px 24px;
-  border-top: 1px solid rgba(255,255,255,.06);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.drawer-enq {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  background: var(--gold);
-  color: var(--ink);
-  font-size: 11px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  transition: background .3s;
-}
-.drawer-enq:hover { background: var(--gold-l); }
-.drawer-call {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.55);
-  font-size: 13px;
-  letter-spacing: .06em;
-  transition: border-color .2s, color .2s;
-}
-.drawer-call:hover { border-color: var(--gold); color: var(--gold-l); }
-
-/* ══════════════════════════════════════
-   HERO — MOBILE FIRST (Tilak-style)
-══════════════════════════════════════ */
-.hero {
-  position: relative;
-  /* MOBILE: portrait fill, content bottom */
-  height: 100svh;
-  min-height: 600px;
-  background: var(--ink);
-  overflow: hidden;
-}
-.hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.hero-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Mobile: show center-top of image (temple top) */
-  object-position: center 15%;
-}
-
-/* Mobile: heavy bottom gradient so text always reads */
-.hero-veil {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to top,
-      rgba(24,20,15,.98) 0%,
-      rgba(24,20,15,.85) 30%,
-      rgba(24,20,15,.45) 55%,
-      rgba(24,20,15,.1)  80%,
-      transparent 100%
-    ),
-    linear-gradient(to bottom,
-      rgba(24,20,15,.35) 0%,
-      transparent 20%
-    );
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  /* Mobile: content at BOTTOM */
-  justify-content: flex-end;
-  padding: 0 20px 36px;
-  max-width: 1320px;
-  margin: 0 auto;
-}
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-.hero-eyebrow-line { width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
-.hero-eyebrow-text {
-  font-size: 9px;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  color: var(--gold-l);
-}
-.hero-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(44px, 12vw, 110px);
-  font-weight: 300;
-  line-height: .96;
-  color: #fff;
-  letter-spacing: -.02em;
-  margin-bottom: 8px;
-}
-.hero-h1 em { display: block; font-style: italic; color: var(--gold-p); }
-.hero-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: clamp(15px, 3.5vw, 20px);
-  color: rgba(255,255,255,.5);
-  margin: 14px 0 28px;
-  line-height: 1.6;
-}
-.hero-btns {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 36px;
-}
-.hero-btns a {
-  flex: 1;
-  min-width: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  padding: 14px 16px;
-  border: 1px solid;
-  transition: all .35s;
-  position: relative;
-  overflow: hidden;
-}
-.btn-gf { background: var(--gold); border-color: var(--gold); color: var(--ink); }
-.btn-gf:hover { background: var(--ink); color: var(--ivory); border-color: var(--ink-mid); }
-.btn-wo { background: transparent; border-color: rgba(255,255,255,.4); color: #fff; }
-.btn-wo:hover { border-color: rgba(255,255,255,.8); }
-.hero-stats {
-  display: flex;
-  border-top: 1px solid rgba(255,255,255,.12);
-  padding-top: 24px;
-}
-.h-stat { flex: 1; text-align: center; padding: 0 8px; border-right: 1px solid rgba(255,255,255,.1); }
-.h-stat:last-child { border-right: none; }
-.h-stat-n {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(22px, 6vw, 40px);
-  font-weight: 300;
-  color: var(--gold-l);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.h-stat-l {
-  font-size: 8px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.3);
-}
-
-/* ══════════════════════════════════════
-   GOLD MARQUEE
-══════════════════════════════════════ */
-.mband { background: var(--gold); overflow: hidden; white-space: nowrap; }
-.mtrack { display: inline-flex; animation: ticker 22s linear infinite; }
-.mitem {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 32px;
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(24,20,15,.82);
-}
-.msep { font-size: 14px; color: rgba(24,20,15,.3); }
-
-/* ══════════════════════════════════════
-   TRUST RIBBON — horizontal scroll mobile
-══════════════════════════════════════ */
-.trust-ribbon {
-  background: var(--ivory-w);
-  border-bottom: 1px solid var(--ivory-d);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.trust-ribbon::-webkit-scrollbar { display: none; }
-.trust-inner {
-  display: flex;
-  align-items: stretch;
-  min-width: max-content;
-}
-.tr-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 28px;
-  border-right: 1px solid var(--ivory-d);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.tr-item:last-child { border-right: none; }
-.tr-ico { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.tr-ico svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.tr-label { font-size: 12px; color: var(--ink); font-weight: 400; letter-spacing: .03em; }
-.tr-sub { font-size: 10px; color: var(--ink-light); margin-top: 2px; }
-
-/* ══════════════════════════════════════
-   SECTIONS — shared
-══════════════════════════════════════ */
-.section { padding: clamp(56px, 9vw, 120px) 0; }
-.container { max-width: 1320px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 64px); }
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 10px;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-.eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); flex-shrink: 0; }
-.display {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-  line-height: 1.06;
-  letter-spacing: -.01em;
-}
-.orn { display: flex; align-items: center; gap: 12px; margin: 18px 0 24px; }
-.orn-line { height: 1px; width: 44px; background: linear-gradient(to right, var(--gold), transparent); flex-shrink: 0; }
-.orn-diamond { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
-
-/* ── reveal animations ── */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; }
-.d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
-
-/* ══════════════════════════════════════
-   ABOUT / HERITAGE
-══════════════════════════════════════ */
-.heritage-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-.heritage-imgs { position: relative; }
-.h-main {
-  width: 100%;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  position: relative;
-}
-.h-main img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
-.h-main:hover img { transform: scale(1.04); }
-.h-inset {
-  position: absolute;
-  width: 42%;
-  aspect-ratio: 1;
-  bottom: -20px;
-  right: -12px;
-  overflow: hidden;
-  border: 5px solid var(--ivory);
-  box-shadow: 0 16px 48px rgba(24,20,15,.14);
-}
-.h-inset img { width: 100%; height: 100%; object-fit: cover; }
-.h-badge {
-  position: absolute;
-  top: 20px;
-  left: -12px;
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  background: var(--gold);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 28px rgba(184,154,90,.4);
-  z-index: 2;
-}
-.h-badge-n { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: #fff; line-height: 1; }
-.h-badge-t { font-size: 8px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.82); margin-top: 2px; }
-/* gold grid stats */
-.h-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gold); border: 1px solid var(--gold); margin: 32px 0 36px; }
-.h-sblock { background: var(--ivory); padding: 18px 16px; transition: background .3s; }
-.h-sblock:hover { background: var(--ivory-w); }
-.h-sn { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 4px; }
-.h-sl { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); }
-
-/* ══════════════════════════════════════
-   COLLECTIONS
-══════════════════════════════════════ */
-.coll-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-}
-.coll-card {
-  position: relative;
-  overflow: hidden;
-  background: var(--ink-mid);
-  cursor: pointer;
-}
-.coll-img {
-  aspect-ratio: 2/3;
-  overflow: hidden;
-}
-.coll-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.72); transition: transform .8s, filter .5s; }
-.coll-card:hover .coll-img img { transform: scale(1.07); filter: brightness(.52); }
-.coll-info {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: clamp(14px, 3vw, 24px);
-  background: linear-gradient(to top, rgba(24,20,15,.92) 0%, transparent 55%);
-}
-.coll-sz { font-size: clamp(8px, 1.8vw, 10px); letter-spacing: .22em; text-transform: uppercase; color: var(--gold-l); margin-bottom: 5px; }
-.coll-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 4vw, 24px); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 3px; }
-.coll-note { font-size: clamp(10px, 2vw, 12px); color: rgba(255,255,255,.4); }
-
-/* ══════════════════════════════════════
-   PRICING CATEGORIES (like Tilak)
-══════════════════════════════════════ */
-.price-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.price-card {
-  background: #fff;
-  border: 1px solid var(--ivory-d);
-  overflow: hidden;
-  transition: box-shadow .3s, transform .3s, border-color .3s;
-  cursor: pointer;
-  position: relative;
-}
-.price-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .4s;
-}
-.price-card:hover { box-shadow: 0 12px 40px rgba(24,20,15,.1); transform: translateY(-3px); border-color: var(--ivory-d); }
-.price-card:hover::before { transform: scaleX(1); }
-.price-img { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: var(--ivory-m); }
-.price-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
-.price-card:hover .price-img img { transform: scale(1.05); }
-.price-body { padding: clamp(12px, 3vw, 20px); }
-.price-from { font-size: clamp(9px, 2vw, 11px); letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-.price-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 4vw, 22px); font-weight: 300; color: var(--ink); line-height: 1.2; margin-bottom: 4px; }
-.price-desc { font-size: clamp(10px, 2.2vw, 12px); color: var(--ink-light); line-height: 1.6; }
-.popular-tag {
-  position: absolute;
-  top: 0; right: 0;
-  background: var(--gold);
-  color: var(--ink);
-  font-size: 8px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-}
-
-/* ══════════════════════════════════════
-   PROCESS STEPS
-══════════════════════════════════════ */
-.process-bg {
-  background: var(--ink);
-  padding: clamp(56px, 9vw, 120px) 0;
-  position: relative;
-  overflow: hidden;
-}
-.process-bg::before {
-  content: 'CRAFT';
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(80px, 18vw, 220px);
-  font-weight: 300;
-  color: rgba(255,255,255,.022);
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-/* Mobile: vertical steps */
-.proc-steps-mobile {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-top: 44px;
-}
-.proc-step-m {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(255,255,255,.05);
-}
-.proc-step-m:last-child { border-bottom: none; }
-.proc-circle {
-  width: 50px; height: 50px;
-  border-radius: 50%;
-  border: 1px solid rgba(184,154,90,.35);
-  background: var(--ink);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px; font-weight: 300;
-  color: var(--gold-l);
-  flex-shrink: 0;
-  transition: background .4s, border-color .4s;
-}
-.proc-step-m:hover .proc-circle { background: var(--gold); border-color: var(--gold); color: var(--ink); }
-.proc-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: rgba(255,255,255,.88); margin-bottom: 6px; }
-.proc-desc { font-size: 13px; color: rgba(255,255,255,.34); line-height: 1.7; }
-
-/* Desktop: horizontal */
-.proc-steps-desktop { display: none; }
-
-/* ══════════════════════════════════════
-   3D TECH SECTION
-══════════════════════════════════════ */
-.tech-wrap {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-.tech-img-side {
-  position: relative;
-  overflow: hidden;
-  min-height: 320px;
-  background: var(--ink-mid);
-}
-.tech-img-side img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
-.tech-img-side:hover img { transform: scale(1.04); }
-.tech-badge {
-  position: absolute;
-  bottom: 20px; left: 20px;
-  background: rgba(24,20,15,.88);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(184,154,90,.22);
-  padding: 12px 18px;
-  z-index: 2;
-}
-.tech-badge-l { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
-.tech-badge-v { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; color: #fff; }
-.tech-body-side {
-  background: var(--ivory-w);
-  padding: clamp(36px, 7vw, 80px) clamp(20px, 5vw, 72px);
-}
-.tech-feats { display: flex; flex-direction: column; gap: 18px; margin: 28px 0 36px; }
-.t-feat { display: flex; align-items: flex-start; gap: 14px; }
-.t-feat-ico {
-  width: 40px; height: 40px; flex-shrink: 0;
-  border: 1px solid var(--ivory-d);
-  display: flex; align-items: center; justify-content: center;
-  background: var(--ivory);
-  transition: border-color .3s;
-}
-.t-feat:hover .t-feat-ico { border-color: var(--gold); }
-.t-feat-ico svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.t-feat-t { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 300; color: var(--ink); margin-bottom: 3px; }
-.t-feat-d { font-size: 13px; color: var(--ink-light); line-height: 1.7; }
-
-/* ══════════════════════════════════════
-   STATS BAR
-══════════════════════════════════════ */
-.stats-bg {
-  background: var(--ivory-m);
-  padding: clamp(48px, 8vw, 96px) 0;
-  position: relative;
-  overflow: hidden;
-}
-.stats-bg::before {
-  content: 'WORLDWIDE';
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(40px, 12vw, 130px);
-  font-weight: 300;
-  color: rgba(140,115,85,.1);
-  white-space: nowrap;
-  pointer-events: none;
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  position: relative;
-  z-index: 1;
-}
-.stat-b {
-  text-align: center;
-  padding: 24px 16px;
-  border-right: 1px solid rgba(140,115,85,.2);
-  border-bottom: 1px solid rgba(140,115,85,.2);
-}
-.stat-b:nth-child(2n) { border-right: none; }
-.stat-b:nth-last-child(-n+2) { border-bottom: none; }
-.stat-n {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 9vw, 64px);
-  font-weight: 300;
-  color: var(--ink);
-  line-height: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2px;
-}
-.stat-n sup { font-size: .42em; margin-top: 8px; color: var(--gold); }
-.stat-l { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-light); margin-top: 8px; }
-.stat-sl { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; color: var(--ink-light); opacity: .7; margin-top: 2px; }
-
-/* ══════════════════════════════════════
-   PROJECTS
-══════════════════════════════════════ */
-.proj-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2px;
-}
-.proj-card { overflow: hidden; background: var(--ivory-m); cursor: pointer; }
-.proj-img { width: 100%; padding-bottom: 65%; position: relative; overflow: hidden; }
-.proj-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
-.proj-card:hover .proj-img img { transform: scale(1.06); }
-.proj-body { padding: 16px 18px 20px; background: var(--ivory); border-top: 1px solid var(--ivory-m); }
-.proj-loc { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
-.proj-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--ink); }
-
-.proj-tabs {
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  border-bottom: 1px solid var(--ivory-m);
-  margin-bottom: 28px;
-  gap: 0;
-}
-.proj-tabs::-webkit-scrollbar { display: none; }
-.ptab {
-  font-size: 11px;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: var(--ink-light);
-  padding: 10px 20px;
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  margin-bottom: -1px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: color .2s, border-color .2s;
-}
-.ptab.active, .ptab:hover { color: var(--ink); border-bottom-color: var(--gold); }
-
-/* ══════════════════════════════════════
-   MARBLE TYPES
-══════════════════════════════════════ */
-.marble-bg { background: var(--ink); padding: clamp(56px, 9vw, 120px) 0; }
-.marble-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  margin-top: 40px;
-}
-.m-card { position: relative; overflow: hidden; cursor: pointer; }
-.m-img { width: 100%; aspect-ratio: 2/3; overflow: hidden; }
-.m-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.65); transition: transform .8s, filter .4s; }
-.m-card:hover .m-img img { transform: scale(1.07); filter: brightness(.5); }
-.m-info {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: clamp(20px, 5vw, 36px) clamp(14px, 3vw, 24px) clamp(14px, 3vw, 22px);
-  background: linear-gradient(to top, rgba(24,20,15,.92), transparent);
-}
-.m-grade { font-size: clamp(8px, 1.8vw, 9px); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-l); margin-bottom: 4px; }
-.m-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 4vw, 22px); font-weight: 300; color: #fff; margin-bottom: 2px; }
-.m-origin { font-size: clamp(10px, 2.2vw, 11px); color: rgba(255,255,255,.38); }
-
-/* ══════════════════════════════════════
-   TESTIMONIALS
-══════════════════════════════════════ */
-.testi-bg { background: var(--ink); padding: clamp(56px, 9vw, 120px) 0; position: relative; overflow: hidden; }
-.testi-bg::before {
-  content: '"';
-  position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
-  font-family: 'Cormorant Garamond', serif; font-size: 300px; line-height: 1;
-  color: rgba(255,255,255,.018); pointer-events: none;
-}
-.rating-hero { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.06); }
-.r-score { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 12vw, 72px); font-weight: 300; color: #fff; line-height: 1; }
-.r-stars { display: flex; gap: 3px; margin-bottom: 6px; }
-.star { width: 12px; height: 12px; background: var(--gold); clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
-.r-src { font-size: 10px; letter-spacing: .1em; color: rgba(255,255,255,.3); text-transform: uppercase; }
-
-.testi-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2px;
-}
-.t-card {
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(184,154,90,.1);
-  padding: clamp(24px, 5vw, 40px) clamp(20px, 4vw, 32px);
-  transition: border-color .3s, background .3s;
-}
-.t-card:hover { border-color: rgba(184,154,90,.35); background: rgba(255,255,255,.05); }
-.t-stars { display: flex; gap: 3px; margin-bottom: 18px; }
-.t-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(16px, 4vw, 18px);
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(255,255,255,.75);
-  line-height: 1.72;
-  margin-bottom: 24px;
-}
-.t-auth { display: flex; align-items: center; gap: 12px; }
-.t-av { width: 42px; height: 42px; border-radius: 50%; background: rgba(184,154,90,.18); border: 1px solid rgba(184,154,90,.28); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--gold-l); flex-shrink: 0; }
-.t-name { font-size: 13px; color: rgba(255,255,255,.8); margin-bottom: 2px; }
-.t-loc { font-size: 11px; color: rgba(255,255,255,.28); letter-spacing: .05em; }
-
-/* ══════════════════════════════════════
-   PRESS
-══════════════════════════════════════ */
-.press-bg { background: var(--ivory-w); padding: 36px 0; border-top: 1px solid var(--ivory-d); border-bottom: 1px solid var(--ivory-d); }
-.press-label { font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--ink-light); text-align: center; margin-bottom: 20px; }
-.press-logos { display: flex; align-items: center; justify-content: center; gap: clamp(20px, 5vw, 48px); flex-wrap: wrap; }
-.press-logo { font-family: 'Cormorant Garamond', serif; font-size: clamp(12px, 3vw, 14px); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: rgba(24,20,15,.28); transition: color .25s; }
-.press-logo:hover { color: rgba(24,20,15,.55); }
-.press-logo.it { font-style: italic; letter-spacing: .04em; }
-
-/* ══════════════════════════════════════
-   WHY US
-══════════════════════════════════════ */
-.why-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-.why-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.why-card {
-  padding: clamp(18px, 4vw, 28px) clamp(14px, 3vw, 24px);
-  border: 1px solid var(--ivory-d);
-  background: var(--ivory-w);
-  position: relative;
-  transition: box-shadow .3s, transform .3s;
-}
-.why-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .4s;
-}
-.why-card:hover { box-shadow: 0 10px 32px rgba(24,20,15,.08); transform: translateY(-2px); }
-.why-card:hover::before { transform: scaleX(1); }
-.why-ico { width: 32px; height: 32px; margin-bottom: 12px; }
-.why-ico svg { width: 100%; height: 100%; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.why-t { font-family: 'Cormorant Garamond', serif; font-size: clamp(15px, 3.5vw, 18px); font-weight: 300; color: var(--ink); margin-bottom: 6px; }
-.why-d { font-size: clamp(11px, 2.5vw, 13px); color: var(--ink-light); line-height: 1.7; }
-
-.cert-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
-.cert-badge { display: flex; align-items: center; gap: 8px; padding: 9px 14px; border: 1px solid var(--ivory-d); background: #fff; }
-.cert-badge svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 1.5; flex-shrink: 0; }
-.cert-badge span { font-size: 10px; letter-spacing: .05em; color: var(--ink-light); white-space: nowrap; }
-
-/* ══════════════════════════════════════
-   ENQUIRY FORM
-══════════════════════════════════════ */
-.enq-bg { background: var(--ivory-w); padding: clamp(56px, 9vw, 120px) 0; }
-.enq-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-.enq-contacts { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
-.enq-ci { display: flex; align-items: center; gap: 12px; }
-.enq-ico { width: 38px; height: 38px; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(184,154,90,.06); }
-.enq-ico svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.enq-lab { font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2px; }
-.enq-val { font-size: 14px; color: var(--ink); }
-.enq-val a { color: var(--gold); }
-.form-box { background: #fff; padding: clamp(24px, 5vw, 52px); box-shadow: 0 4px 56px rgba(24,20,15,.08); }
-.form-box-t { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 5vw, 28px); font-weight: 300; color: var(--ink); margin-bottom: 4px; }
-.form-box-s { font-size: 13px; color: var(--ink-light); margin-bottom: 24px; }
-.f-group { margin-bottom: 14px; }
-.f-group label { display: block; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 7px; }
-.f-group input, .f-group select, .f-group textarea {
-  width: 100%; padding: 13px 15px;
-  background: var(--ivory); border: 1px solid var(--ivory-d);
-  font-family: 'Tenor Sans', sans-serif; font-size: 14px; color: var(--ink);
-  outline: none; transition: border-color .25s, background .25s;
-  appearance: none; -webkit-appearance: none;
-}
-.f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-color: var(--gold); background: #fff; }
-.f-group textarea { min-height: 90px; resize: vertical; line-height: 1.5; }
-.f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.f-submit {
-  width: 100%; margin-top: 6px;
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 17px 28px; background: var(--gold); border: 1px solid var(--gold);
-  color: var(--ink); font-family: 'Tenor Sans', sans-serif; font-size: 11px;
-  letter-spacing: .2em; text-transform: uppercase; cursor: pointer;
-  transition: background .35s, color .35s, border-color .35s;
-}
-.f-submit:hover { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
-.f-success {
-  display: none; margin-top: 14px; padding: 14px 18px;
-  background: rgba(184,154,90,.07); border: 1px solid rgba(184,154,90,.22);
-  font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic;
-  color: var(--ink); text-align: center;
-}
-.f-privacy { display: flex; align-items: center; gap: 7px; margin-top: 10px; font-size: 11px; color: var(--ink-light); }
-.f-privacy svg { width: 12px; height: 12px; stroke: var(--gold); fill: none; stroke-width: 1.5; flex-shrink: 0; }
-
-/* ══════════════════════════════════════
-   INSTAGRAM / SOCIAL CTA
-══════════════════════════════════════ */
-.insta-bg { background: var(--ink-mid); padding: clamp(48px, 8vw, 88px) 0; text-align: center; }
-.insta-bg h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 7vw, 52px); font-weight: 300; font-style: italic; color: #fff; margin-bottom: 6px; }
-.insta-handle { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
-.insta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.insta-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
-  padding: 14px 28px; border: 1px solid;
-  transition: all .3s;
-}
-
-/* ══════════════════════════════════════
-   FOOTER
-══════════════════════════════════════ */
-footer { background: var(--ink); padding: clamp(48px, 7vw, 80px) 0 0; }
-.foot-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: #fff; letter-spacing: .04em; margin-bottom: 3px; }
-.foot-brand-sub { font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-.foot-brand-desc { font-size: 13px; color: rgba(255,255,255,.3); line-height: 1.85; max-width: 280px; margin-bottom: 20px; }
-.foot-social { display: flex; gap: 8px; }
-.foot-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.3); transition: border-color .2s, color .2s; }
-.foot-social a:hover { border-color: var(--gold); color: var(--gold); }
-.foot-social svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.5; }
-.foot-col h4 {
-  font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.4);
-  display: flex; align-items: center; justify-content: space-between;
-  cursor: pointer; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.05);
-  margin-bottom: 0;
-}
-.foot-col h4::after { content: '+'; font-size: 18px; color: var(--gold); font-weight: 300; line-height: 1; transition: transform .3s; }
-.foot-col.open h4::after { transform: rotate(45deg); }
-.foot-col h4.desktop-head { display: block; padding: 0 0 20px 0; border-bottom: none; cursor: default; }
-.foot-col h4.desktop-head::after { display: none; }
-.foot-col ul { list-style: none; max-height: 0; overflow: hidden; transition: max-height .35s ease; }
-.foot-col.open ul { max-height: 300px; padding-bottom: 16px; }
-.foot-col li { margin-bottom: 10px; }
-.foot-col a { font-size: 13px; color: rgba(255,255,255,.28); letter-spacing: .02em; transition: color .2s; }
-.foot-col a:hover { color: rgba(255,255,255,.7); }
-.foot-bottom {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 0 72px; border-top: 1px solid rgba(255,255,255,.05);
-  flex-wrap: wrap; gap: 10px;
-}
-.foot-bottom p { font-size: 12px; color: rgba(255,255,255,.18); letter-spacing: .04em; }
-.foot-links { display: flex; gap: 20px; }
-.foot-links a { font-size: 12px; color: rgba(255,255,255,.18); transition: color .2s; }
-.foot-links a:hover { color: rgba(255,255,255,.5); }
-
-/* ══════════════════════════════════════
-   FLOATING & FIXED ELEMENTS
-══════════════════════════════════════ */
-.wa-btn {
-  position: fixed; bottom: 24px; right: 20px; z-index: 900;
-  width: 52px; height: 52px; border-radius: 50%; background: #25D366;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,.38); transition: transform .25s;
-}
-.wa-btn:hover { transform: scale(1.1); }
-.wa-btn svg { width: 24px; height: 24px; fill: #fff; }
-
-/* MOBILE BOTTOM BAR */
-.m-bar {
-  display: flex;
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 950;
-  height: 60px;
-  border-top: 1px solid rgba(255,255,255,.08);
-  box-shadow: 0 -4px 20px rgba(24,20,15,.2);
-}
-.m-bar a {
-  flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px;
-  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
-  -webkit-tap-highlight-color: transparent; transition: opacity .2s;
-}
-.m-bar a:active { opacity: .8; }
-.m-call { background: var(--ink-mid); color: rgba(255,255,255,.72); border-right: 1px solid rgba(255,255,255,.07); }
-.m-enq { background: var(--gold); color: var(--ink); }
-.m-bar svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-
-/* ══════════════════════════════════════
-   DESKTOP BREAKPOINTS (≥768px)
-══════════════════════════════════════ */
-@media (min-width: 768px) {
-  :root { --nav-h: 76px; }
-  .nav-inner { padding: 0 clamp(24px, 4vw, 64px); }
-
-  /* Hero: desktop split layout */
-  .hero { height: calc(100svh - var(--nav-h) - 46px); max-height: 1000px; }
-  .hero-img img { object-position: center 20%; }
-  .hero-veil {
-    background:
-      linear-gradient(to right, rgba(24,20,15,.90) 0%, rgba(24,20,15,.5) 50%, rgba(24,20,15,.08) 100%),
-      linear-gradient(to top, rgba(24,20,15,.5) 0%, transparent 42%),
-      linear-gradient(to bottom, rgba(24,20,15,.22) 0%, transparent 26%);
-  }
-  .hero-content { justify-content: center; padding: 0 clamp(24px, 4vw, 72px); }
-  .hero-h1 { font-size: clamp(56px, 7.5vw, 110px); }
-  .hero-sub { font-size: clamp(17px, 2vw, 22px); }
-  .hero-btns a { flex: 0 auto; min-width: auto; }
-
-  /* Nav */
-  .nav-links { display: flex; }
-  .nav-cta { display: inline-flex; }
-  .ham-btn { display: none; }
-
-  /* Heritage */
-  .heritage-grid { grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 100px); align-items: center; }
-  .h-main { aspect-ratio: 4/5; }
-  .h-inset { width: 44%; bottom: -28px; right: -24px; border-width: 6px; }
-  .h-badge { width: 86px; height: 86px; left: -20px; top: 28px; }
-  .h-badge-n { font-size: 26px; }
-  .h-badge-t { font-size: 8.5px; }
-
-  /* Collections */
-  .coll-grid { grid-template-columns: repeat(4, 1fr); }
-  .coll-img { aspect-ratio: 3/4; }
-
-  /* Pricing */
-  .price-grid { grid-template-columns: repeat(4, 1fr); }
-
-  /* Process: switch to horizontal */
-  .proc-steps-mobile { display: none; }
-  .proc-steps-desktop {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    position: relative;
-    margin-top: 72px;
-  }
-  .proc-steps-desktop::before {
-    content: '';
-    position: absolute;
-    top: 25px; left: 10%; right: 10%; height: 1px;
-    background: linear-gradient(to right, transparent, rgba(184,154,90,.25) 20%, rgba(184,154,90,.25) 80%, transparent);
-  }
-  .p-step-d { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; }
-  .p-step-d .proc-circle { margin-bottom: 24px; position: relative; z-index: 1; }
-  .p-step-d .proc-title { font-size: 19px; margin-bottom: 8px; }
-  .p-step-d .proc-desc { font-size: 13px; }
-
-  /* Tech */
-  .tech-wrap { grid-template-columns: 1fr 1fr; min-height: 580px; }
-  .tech-img-side { min-height: auto; }
-
-  /* Stats */
-  .stats-grid { grid-template-columns: repeat(5, 1fr); }
-  .stat-b { border-bottom: none; }
-  .stat-b:nth-child(2n) { border-right: 1px solid rgba(140,115,85,.2); }
-  .stat-b:last-child { border-right: none; }
-
-  /* Projects */
-  .proj-grid { grid-template-columns: repeat(3, 1fr); }
-
-  /* Marble */
-  .marble-grid { grid-template-columns: repeat(4, 1fr); }
-  .m-img { aspect-ratio: 3/4; }
-
-  /* Testimonials */
-  .testi-grid { grid-template-columns: repeat(3, 1fr); }
-
-  /* Why */
-  .why-grid { grid-template-columns: 5fr 7fr; gap: clamp(48px, 6vw, 96px); align-items: center; }
-  .why-cards { grid-template-columns: repeat(3, 1fr); }
-
-  /* Enquiry */
-  .enq-grid { grid-template-columns: 5fr 7fr; gap: clamp(48px, 6vw, 96px); align-items: start; }
-  .f-row { grid-template-columns: 1fr 1fr; }
-
-  /* Footer */
-  .foot-grid { display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,.05); }
-  .foot-col h4 { display: block; cursor: default; border-bottom: none; padding: 0 0 20px 0; margin-bottom: 0; }
-  .foot-col h4::after { display: none; }
-  .foot-col ul { max-height: none !important; padding-bottom: 0 !important; }
-  .foot-bottom { padding-bottom: 24px; }
-
-  /* Hide mobile bar */
-  .m-bar { display: none; }
-  .wa-btn { display: flex !important; bottom: 28px; }
-
-  /* Announcement: show on desktop */
-  .ann-bar { display: block; }
-}
-
-@media (min-width: 1024px) {
-  .why-cards { grid-template-columns: repeat(3, 1fr); }
-}
-
-/* Button shared */
-.btn-do {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: 'Tenor Sans', sans-serif;
-  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
-  padding: 15px 36px; border: 1px solid;
-  position: relative; overflow: hidden;
-  transition: color .35s, border-color .35s;
-  white-space: nowrap;
-}
-.btn-do::before { content: ''; position: absolute; inset: 0; transform: translateX(-101%); transition: transform .38s cubic-bezier(.4,0,.2,1); }
-.btn-do:hover::before { transform: translateX(0); }
-.btn-do > span, .btn-do > svg { position: relative; z-index: 1; }
-.btn-do svg { transition: transform .3s; flex-shrink: 0; }
-.btn-do:hover svg { transform: translateX(4px); }
-.btn-dark { border-color: var(--ink); color: var(--ink); }
-.btn-dark::before { background: var(--ink); }
-.btn-dark:hover { color: var(--ivory); border-color: var(--ink); }
-.btn-gold-o { border-color: var(--gold); color: var(--gold); }
-.btn-gold-o::before { background: var(--gold); }
-.btn-gold-o:hover { color: var(--ink); }
-.btn-white-o { border-color: rgba(255,255,255,.45); color: #fff; }
-.btn-white-o::before { background: rgba(255,255,255,.1); }
-.btn-white-o:hover { border-color: rgba(255,255,255,.8); }
-
-.ai { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-
-/* Ann bar hide mobile */
-@media (max-width: 767px) {
-  .ann-bar { display: none; }
-  .hero-btns { flex-direction: row; }
-}
-</style>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-ivory text-ink overflow-x-hidden font-body">
 
-<!-- ── ANNOUNCEMENT BAR ── -->
-<div class="ann-bar">
-  <div class="ann-track">
-    <div class="ann-item"><span class="ann-dot"></span> <b>Bespoke Marble Temples</b> — Starting ₹10 Lakh</div>
-    <div class="ann-item"><span class="ann-dot"></span> <b>Free 3D Design Consultation</b> — Book Today</div>
-    <div class="ann-item"><span class="ann-dot"></span> <b>White-Glove Delivery</b> — 30+ Countries</div>
-    <div class="ann-item"><span class="ann-dot"></span> <b>200+ Master Artisans</b> — Kishangarh, Rajasthan</div>
-    <div class="ann-item"><span class="ann-dot"></span> <b>4.9★ Google Rating</b> — 950+ Verified Reviews</div>
-    <div class="ann-item"><span class="ann-dot"></span> <b>Bespoke Marble Temples</b> — Starting ₹10 Lakh</div>
-    <div class="ann-item"><span class="ann-dot"></span> <b>Free 3D Design Consultation</b> — Book Today</div>
-    <div class="ann-item"><span class="ann-dot"></span> <b>White-Glove Delivery</b> — 30+ Countries</div>
-    <div class="ann-item"><span class="ann-dot"></span> <b>200+ Master Artisans</b> — Kishangarh, Rajasthan</div>
-    <div class="ann-item"><span class="ann-dot"></span> <b>4.9★ Google Rating</b> — 950+ Verified Reviews</div>
+  <!-- ═══════════════════════════════════
+       ANNOUNCEMENT BAR
+  ═══════════════════════════════════ -->
+  <div class="ann-bar hidden md:block">
+    <div class="ann-track">
+      <span class="ann-item"><span class="ann-dot"></span><b>Bespoke Marble Temples</b> — Starting ₹10 Lakh</span>
+      <span class="ann-item"><span class="ann-dot"></span><b>Free 3D Design Consultation</b> — Book Today</span>
+      <span class="ann-item"><span class="ann-dot"></span><b>White-Glove Delivery</b> — 30+ Countries Worldwide</span>
+      <span class="ann-item"><span class="ann-dot"></span><b>200+ Master Artisans</b> — Kishangarh, Rajasthan</span>
+      <span class="ann-item"><span class="ann-dot"></span><b>4.9★ Google Rating</b> — 950+ Verified Reviews</span>
+      <span class="ann-item"><span class="ann-dot"></span><b>Bespoke Marble Temples</b> — Starting ₹10 Lakh</span>
+      <span class="ann-item"><span class="ann-dot"></span><b>Free 3D Design Consultation</b> — Book Today</span>
+      <span class="ann-item"><span class="ann-dot"></span><b>White-Glove Delivery</b> — 30+ Countries Worldwide</span>
+      <span class="ann-item"><span class="ann-dot"></span><b>200+ Master Artisans</b> — Kishangarh, Rajasthan</span>
+      <span class="ann-item"><span class="ann-dot"></span><b>4.9★ Google Rating</b> — 950+ Verified Reviews</span>
+    </div>
   </div>
-</div>
 
-<!-- ── NAVIGATION ── -->
-<nav class="navbar" id="nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="https://arihantdivinearts.com/uploads/settings/1776097905722-890432.png" alt="Arihant Heritage" onerror="this.style.display='none'">
-      <div class="nav-logo-text">
-        <div class="nav-logo-name">Arihant Heritage</div>
-        <div class="nav-logo-sub">Since 1998 · Kishangarh</div>
+  <!-- ═══════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="/" class="nav-logo" aria-label="Arihant Heritage Home">
+        <img
+          src="https://arihantdivinearts.com/uploads/settings/1776097905722-890432.png"
+          alt="Arihant Heritage"
+          class="nav-logo-img"
+          onerror="this.style.display='none'"
+        >
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Arihant Heritage</span>
+          <span class="nav-logo-tagline">Since 1998 · Kishangarh</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links hidden lg:flex">
+        <li><a href="/about-us" class="nav-link">About</a></li>
+        <li><a href="/our-creation" class="nav-link">Gallery</a></li>
+        <li><a href="/our-process" class="nav-link">Process</a></li>
+        <li><a href="/international-projects" class="nav-link">Projects</a></li>
+        <li><a href="/blog" class="nav-link">Journal</a></li>
+      </ul>
+
+      <!-- Desktop Actions -->
+      <div class="nav-actions hidden lg:flex">
+        <a href="tel:+919319374633" class="nav-phone">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          +91 93193 74633
+        </a>
+        <a href="#enquiry" class="btn-primary">Free Consultation</a>
       </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="/about-us">About</a></li>
-      <li><a href="/our-creation">Gallery</a></li>
-      <li><a href="/our-process">Process</a></li>
-      <li><a href="/international-projects">Projects</a></li>
-      <li><a href="/blog">Journal</a></li>
-    </ul>
-    <div style="display:flex;align-items:center;gap:16px;flex-shrink:0;">
-      <a href="#enquiry" class="nav-cta">Free Consultation</a>
-      <button class="ham-btn" id="ham" aria-label="Menu">
-        <span></span><span></span><span></span>
+
+      <!-- Mobile: Phone Icon + Hamburger -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <a href="tel:+919319374633" class="mobile-call-icon" aria-label="Call us">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="ham-btn" id="hamBtn" aria-label="Open menu" aria-expanded="false">
+          <span class="ham-line" id="hl1"></span>
+          <span class="ham-line" id="hl2"></span>
+          <span class="ham-line" id="hl3"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer-mask" id="drawerMask" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" aria-label="Navigation menu">
+    <div class="drawer-head">
+      <div>
+        <div class="font-display text-xl font-light text-white tracking-wide">Arihant Heritage</div>
+        <div class="text-gold text-[9px] tracking-[0.22em] uppercase mt-1">Since 1998 · Kishangarh</div>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
-  </div>
-</nav>
+    <nav class="drawer-nav">
+      <a href="/about-us" class="drawer-link">About Us <em>→</em></a>
+      <a href="/our-creation" class="drawer-link">Our Gallery <em>→</em></a>
+      <a href="/our-process" class="drawer-link">How It Works <em>→</em></a>
+      <a href="/international-projects" class="drawer-link">Projects <em>→</em></a>
+      <a href="/domestic-projects" class="drawer-link">India Projects <em>→</em></a>
+      <a href="/blog" class="drawer-link">Journal <em>→</em></a>
+      <a href="/contact-us" class="drawer-link">Contact <em>→</em></a>
+    </nav>
+    <div class="drawer-foot">
+      <a href="#enquiry" class="drawer-cta-primary" id="drawerEnq">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Free Consultation
+      </a>
+      <a href="tel:+919319374633" class="drawer-cta-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        +91 93193 74633
+      </a>
+    </div>
+  </aside>
 
-<!-- ── DRAWER ── -->
-<div class="drawer-mask" id="mask"></div>
-<div class="drawer" id="drawer">
-  <div class="drawer-head">
-    <span class="drawer-brand">Arihant Heritage</span>
-    <button class="drawer-x" id="drawerX">✕</button>
-  </div>
-  <nav class="drawer-nav">
-    <a href="/about-us">About Us <em>→</em></a>
-    <a href="/our-creation">Our Gallery <em>→</em></a>
-    <a href="/our-process">Our Process <em>→</em></a>
-    <a href="/international-projects">Int'l Projects <em>→</em></a>
-    <a href="/domestic-projects">India Projects <em>→</em></a>
-    <a href="/blog">Journal <em>→</em></a>
-    <a href="/contact-us">Contact <em>→</em></a>
-  </nav>
-  <div class="drawer-foot">
-    <a href="#enquiry" class="drawer-enq" id="drawerEnq">Free Consultation &nbsp;→</a>
-    <a href="tel:+919319374633" class="drawer-call">📞 &nbsp;+91 93193 74633</a>
-  </div>
-</div>
+  <!-- ═══════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Background Image -->
+    <div class="hero-bg" id="heroBg">
+      <img
+        src="https://arihantdivinearts.com/uploads/settings/1776271326516-272232.png"
+        alt="Luxury Marble Temple"
+        class="hero-bg-img"
+        id="heroBgImg"
+        fetchpriority="high"
+        onerror="this.src='https://images.unsplash.com/photo-1609174604547-7c9e9e8c3cb1?w=1800&q=90'"
+      >
+    </div>
 
-<!-- ══════════════════════════
-     HERO
-══════════════════════════ -->
-<section class="hero">
-  <div class="hero-img">
-    <img
-      src="https://arihantdivinearts.com/uploads/settings/1776271326516-272232.png"
-      alt="Luxury Marble Temple"
-      onerror="this.src='https://images.unsplash.com/photo-1609174604547-7c9e9e8c3cb1?w=1600&q=85'"
-    >
-  </div>
-  <div class="hero-veil"></div>
-  <div class="hero-content" style="max-width:1320px;padding-left:clamp(20px,5vw,72px);padding-right:clamp(20px,5vw,72px);">
-    <div style="max-width:660px;">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <span class="hero-eyebrow-text">Luxury Marble Temples · Since 1998</span>
+    <!-- Layered Veil -->
+    <div class="hero-veil"></div>
+
+    <!-- Grain Overlay -->
+    <div class="hero-grain" aria-hidden="true"></div>
+
+    <!-- Content -->
+    <div class="hero-content" id="heroContent">
+      <div class="hero-text">
+        <!-- Eyebrow -->
+        <div class="hero-eyebrow" data-reveal>
+          <span class="hero-eyebrow-line"></span>
+          <span class="hero-eyebrow-text">Luxury Marble Temples · Since 1998</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-h1" data-reveal data-delay="100">
+          Sacred<br>
+          <em>Masterpieces</em>
+        </h1>
+
+        <!-- Subline -->
+        <p class="hero-sub" data-reveal data-delay="200">
+          Where 500 years of artisanal wisdom<br class="hidden sm:block"> meets the eternal purity of Makrana marble
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-ctas" data-reveal data-delay="300">
+          <a href="#enquiry" class="cta-gold">
+            Begin Your Journey
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/our-creation" class="cta-outline-white">
+            View Gallery
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats" data-reveal data-delay="400">
+          <div class="hero-stat">
+            <span class="hero-stat-n">950<sup>+</sup></span>
+            <span class="hero-stat-l">Projects</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-n">7</span>
+            <span class="hero-stat-l">Generations</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-n">30<sup>+</sup></span>
+            <span class="hero-stat-l">Countries</span>
+          </div>
+        </div>
       </div>
-      <h1 class="hero-h1">Sacred<em>Masterpieces</em></h1>
-      <p class="hero-sub">Where 500 years of artisanal wisdom<br class="hidden md:block"> meets the purity of Makrana marble</p>
-      <div class="hero-btns">
-        <a href="#enquiry" class="btn-gf">
-          Begin Your Journey
-          <svg class="ai" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+
+    <!-- Rotating Seal (desktop) -->
+    <div class="hero-seal hidden lg:flex" aria-hidden="true">
+      <svg class="animate-spin-slow" viewBox="0 0 140 140">
+        <path id="sealCircle" d="M 70,12 A 58,58 0 1,1 69.999,12" fill="none"/>
+        <text fill="rgba(212,184,122,0.7)" font-family="Plus Jakarta Sans" font-size="11" letter-spacing="5.5">
+          <textPath href="#sealCircle">SINCE 1998 · KISHANGARH · RAJASTHAN · INDIA ·</textPath>
+        </text>
+      </svg>
+      <div class="hero-seal-inner">
+        <span class="hero-seal-num">26</span>
+        <span class="hero-seal-label">Years</span>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-cue hidden md:flex" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <span class="hero-scroll-text">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       GOLD MARQUEE
+  ═══════════════════════════════════ -->
+  <div class="marquee-gold" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Bespoke Marble Temples <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">Luxury Pooja Rooms <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">Marble Murtis & Idols <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">3D Design Preview <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">White-Glove Global Delivery <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">200+ Master Artisans <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">Makrana White Marble <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">Since 1998 · Kishangarh <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">Bespoke Marble Temples <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">Luxury Pooja Rooms <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">Marble Murtis & Idols <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">3D Design Preview <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">White-Glove Global Delivery <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">200+ Master Artisans <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">Makrana White Marble <span class="mx-dot">◆</span></span>
+      <span class="marquee-item">Since 1998 · Kishangarh <span class="mx-dot">◆</span></span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       TRUST RIBBON
+  ═══════════════════════════════════ -->
+  <div class="trust-ribbon">
+    <div class="trust-ribbon-scroll">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div><p class="trust-label">5-Year Warranty</p><p class="trust-sub">On all craftsmanship</p></div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div><p class="trust-label">4.9★ Google Rating</p><p class="trust-sub">950+ verified reviews</p></div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <div><p class="trust-label">Global Delivery</p><p class="trust-sub">To 30+ countries</p></div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <div><p class="trust-label">24-Hr Response</p><p class="trust-sub">Expert consultation</p></div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div><p class="trust-label">200+ Artisans</p><p class="trust-sub">7 generations of craft</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       ABOUT / HERITAGE
+  ═══════════════════════════════════ -->
+  <section class="section bg-ivory" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Image Stack -->
+        <div class="about-images" data-reveal>
+          <div class="about-img-main">
+            <img
+              src="https://arihantdivinearts.com/uploads/settings/1776272068679-530568.jpeg"
+              alt="Master artisan carving marble"
+              onerror="this.src='https://images.unsplash.com/photo-1609174604547-7c9e9e8c3cb1?w=900&q=80'"
+            >
+          </div>
+          <div class="about-img-accent">
+            <img
+              src="https://images.unsplash.com/photo-1612528443702-f6741f70a049?w=500&q=80"
+              alt="Intricate marble carving detail"
+              onerror="this.style.background='#D8CBBA'"
+            >
+          </div>
+          <div class="about-badge">
+            <span class="about-badge-num">26</span>
+            <span class="about-badge-text">Years</span>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="about-text" data-reveal data-delay="150">
+          <span class="eyebrow">Our Heritage</span>
+          <div class="divider-orn"></div>
+          <h2 class="section-title">Seven Generations<br>of Devotional Craft</h2>
+          <p class="body-text mt-5">Rooted in Kishangarh — India's marble capital — our family has spent seven generations mastering the sacred art of marble temple creation. Every piece carries centuries of inherited wisdom, passed chisel to chisel.</p>
+          <p class="body-text mt-3">We combine ancient hand-carving techniques with modern 3D visualization, so your sacred space is perfected in pixel-perfect detail before a single chisel touches Makrana stone.</p>
+
+          <!-- Stats Grid -->
+          <div class="stat-grid mt-8">
+            <div class="stat-box">
+              <span class="stat-num">200<sup>+</sup></span>
+              <span class="stat-lbl">Master Artisans</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">5,000</span>
+              <span class="stat-lbl">Hours / Project</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">950<sup>+</sup></span>
+              <span class="stat-lbl">Projects Delivered</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">30<sup>+</sup></span>
+              <span class="stat-lbl">Countries Served</span>
+            </div>
+          </div>
+          <a href="/about-us" class="btn-dark mt-8 inline-flex">
+            <span>Our Story</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       COLLECTIONS
+  ═══════════════════════════════════ -->
+  <section class="section bg-ivory-2">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Collections</span>
+          <div class="divider-orn"></div>
+          <h2 class="section-title">Crafted for Every<br>Sacred Space</h2>
+        </div>
+        <a href="/our-creation" class="btn-dark self-end">
+          <span>All Collections</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="/our-creation" class="btn-wo">
-          View Gallery
-          <svg class="ai" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+
+      <div class="coll-grid" data-reveal data-delay="100">
+        <div class="coll-card">
+          <div class="coll-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Small Pooja Rooms" onerror="this.style.background='#C8B89A'"></div>
+          <div class="coll-overlay"><p class="coll-size">Upto 50 Sqft</p><h3 class="coll-name">Small Pooja<br>Rooms</h3><p class="coll-note">Intimate elegance</p></div>
+          <div class="coll-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+        <div class="coll-card">
+          <div class="coll-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=80" alt="Medium Pooja Rooms" onerror="this.style.background='#B8A880'"></div>
+          <div class="coll-overlay"><p class="coll-size">Upto 80 Sqft</p><h3 class="coll-name">Medium Pooja<br>Rooms</h3><p class="coll-note">Perfectly balanced</p></div>
+          <div class="coll-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+        <div class="coll-card">
+          <div class="coll-img"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=700&q=80" alt="Grand Pooja Rooms" onerror="this.style.background='#A89870'"></div>
+          <div class="coll-overlay"><p class="coll-size">Upto 120 Sqft</p><h3 class="coll-name">Grand Pooja<br>Rooms</h3><p class="coll-note">Commanding grandeur</p></div>
+          <div class="coll-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+        <div class="coll-card">
+          <div class="coll-img"><img src="https://images.unsplash.com/photo-1536599424071-0b215a388ba7?w=700&q=80" alt="Communal Temples" onerror="this.style.background='#988860'"></div>
+          <div class="coll-overlay"><p class="coll-size">150+ Sqft</p><h3 class="coll-name">Communal<br>Temples</h3><p class="coll-note">Monumental presence</p></div>
+          <div class="coll-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       PRICING (Like Tilak, but better)
+  ═══════════════════════════════════ -->
+  <section class="section bg-ivory" id="pricing">
+    <div class="container">
+      <div class="text-center mb-10 md:mb-14" data-reveal>
+        <span class="eyebrow justify-center">Pricing</span>
+        <div class="divider-orn-center"></div>
+        <h2 class="section-title">Pooja Room for<br class="sm:hidden"> Every Budget</h2>
+        <p class="body-text max-w-md mx-auto mt-3">Timeless designs crafted to fit every vision — from intimate shrines to grand sanctuaries.</p>
+      </div>
+
+      <div class="price-grid" data-reveal data-delay="100">
+        <!-- Card 1 -->
+        <div class="price-card" onclick="scrollTo('enquiry')">
+          <div class="price-img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500&q=80" alt="3ft Temple" onerror="this.style.background='#E8DDD0'"></div>
+          <div class="price-body">
+            <p class="price-from">Starting ₹1.5 Lakh</p>
+            <h3 class="price-name">3ft Wide<br>Temples</h3>
+            <p class="price-desc">Compact, elegant, full detail</p>
+          </div>
+        </div>
+        <!-- Card 2 — Popular -->
+        <div class="price-card price-card--popular" onclick="scrollTo('enquiry')">
+          <div class="price-popular-tag">Most Popular</div>
+          <div class="price-img"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=500&q=80" alt="4ft Temple" onerror="this.style.background='#D8CBBA'"></div>
+          <div class="price-body">
+            <p class="price-from">Starting ₹3.5 Lakh</p>
+            <h3 class="price-name">4ft Wide<br>Temples</h3>
+            <p class="price-desc">Most popular home size</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="price-card" onclick="scrollTo('enquiry')">
+          <div class="price-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" alt="5ft Temple" onerror="this.style.background='#C8B89A'"></div>
+          <div class="price-body">
+            <p class="price-from">Starting ₹7 Lakh</p>
+            <h3 class="price-name">5ft Wide<br>Temples</h3>
+            <p class="price-desc">Grand statement piece</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="price-card" onclick="scrollTo('enquiry')">
+          <div class="price-img"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=80" alt="6ft Temple" onerror="this.style.background='#B8A880'"></div>
+          <div class="price-body">
+            <p class="price-from">On Enquiry</p>
+            <h3 class="price-name">6ft &amp; Beyond<br>Temples</h3>
+            <p class="price-desc">Monumental masterwork</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10" data-reveal>
+        <a href="/our-creation" class="btn-dark inline-flex">
+          <span>Full Catalogue & Pricing</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
-      <div class="hero-stats">
-        <div class="h-stat">
-          <div class="h-stat-n">950<sup style="font-size:.5em;vertical-align:super;color:var(--gold)">+</sup></div>
-          <div class="h-stat-l">Projects</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       PROCESS — 5 Steps
+  ═══════════════════════════════════ -->
+  <section class="section-dark" id="process">
+    <div class="process-watermark" aria-hidden="true">CRAFT</div>
+    <div class="container relative z-10">
+      <div class="text-center mb-12 md:mb-20" data-reveal>
+        <span class="eyebrow-light justify-center">How It Works</span>
+        <div class="divider-orn-center-light"></div>
+        <h2 class="section-title-light">Your Temple in<br>5 Sacred Steps</h2>
+        <p class="text-white/40 text-sm md:text-base max-w-md mx-auto mt-3 font-body">From first conversation to white-glove installation — seamlessly guided.</p>
+      </div>
+
+      <!-- Mobile: vertical -->
+      <div class="process-steps-mobile md:hidden" data-reveal>
+        <div class="process-step-v"><div class="ps-circle">1</div><div><h3 class="ps-title">Connect</h3><p class="ps-desc">One-on-one call with our expert — no obligation, pure guidance.</p></div></div>
+        <div class="process-step-v"><div class="ps-circle">2</div><div><h3 class="ps-title">Explore</h3><p class="ps-desc">Choose your design, marble grade, carvings and dimensions.</p></div></div>
+        <div class="process-step-v"><div class="ps-circle">3</div><div><h3 class="ps-title">Visualize</h3><p class="ps-desc">Photorealistic 3D walkthrough before any stone is carved.</p></div></div>
+        <div class="process-step-v"><div class="ps-circle">4</div><div><h3 class="ps-title">Craft</h3><p class="ps-desc">200+ artisans hand-carve with milestone video updates.</p></div></div>
+        <div class="process-step-v last"><div class="ps-circle">5</div><div><h3 class="ps-title">Deliver</h3><p class="ps-desc">White-glove delivery and expert installation worldwide.</p></div></div>
+      </div>
+
+      <!-- Desktop: horizontal -->
+      <div class="process-steps-desktop hidden md:grid" data-reveal>
+        <div class="ps-h-step" data-reveal><div class="ps-circle ps-animated">1</div><h3 class="ps-title">Connect</h3><p class="ps-desc">One-on-one expert call, no obligation.</p></div>
+        <div class="ps-h-step" data-reveal data-delay="80"><div class="ps-circle ps-animated">2</div><h3 class="ps-title">Explore</h3><p class="ps-desc">Choose design, marble & carvings.</p></div>
+        <div class="ps-h-step" data-reveal data-delay="160"><div class="ps-circle ps-animated">3</div><h3 class="ps-title">Visualize</h3><p class="ps-desc">3D walkthrough before carving begins.</p></div>
+        <div class="ps-h-step" data-reveal data-delay="240"><div class="ps-circle ps-animated">4</div><h3 class="ps-title">Craft</h3><p class="ps-desc">200+ artisans carve with milestone updates.</p></div>
+        <div class="ps-h-step" data-reveal data-delay="320"><div class="ps-circle ps-animated">5</div><h3 class="ps-title">Deliver</h3><p class="ps-desc">White-glove global installation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       3D TECHNOLOGY — SPLIT
+  ═══════════════════════════════════ -->
+  <section class="tech-split" id="technology">
+    <div class="tech-image-side" data-reveal>
+      <img src="https://images.unsplash.com/photo-1612528443702-f6741f70a049?w=1000&q=85" alt="3D Temple Visualization" onerror="this.style.background='#2E2920'">
+      <div class="tech-badge">
+        <p class="tech-badge-label">Technology</p>
+        <p class="tech-badge-value">3D Photorealistic Design</p>
+      </div>
+    </div>
+    <div class="tech-content-side">
+      <div class="tech-inner" data-reveal data-delay="120">
+        <span class="eyebrow">Visualize Before We Carve</span>
+        <div class="divider-orn"></div>
+        <h2 class="section-title">See It in Perfect<br>Detail First</h2>
+        <p class="body-text mt-4">Experience your sacred space in breathtaking photorealistic detail — every arch, every carving, every light reflection — exactly as it will look in your home.</p>
+        <div class="tech-features mt-7">
+          <div class="tech-feat">
+            <div class="tech-feat-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div><h4 class="tech-feat-title">360° Temple Walkthrough</h4><p class="tech-feat-desc">Rotate and explore every carved detail from any angle before committing.</p></div>
+          </div>
+          <div class="tech-feat">
+            <div class="tech-feat-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            </div>
+            <div><h4 class="tech-feat-title">Real Marble Texture</h4><p class="tech-feat-desc">See actual Makrana marble veining on your design — exactly what you'll receive.</p></div>
+          </div>
+          <div class="tech-feat">
+            <div class="tech-feat-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div><h4 class="tech-feat-title">In-Room Placement Preview</h4><p class="tech-feat-desc">See exactly how your temple fits your actual room — zero surprises on delivery day.</p></div>
+          </div>
         </div>
-        <div class="h-stat">
-          <div class="h-stat-n">7</div>
-          <div class="h-stat-l">Generations</div>
-        </div>
-        <div class="h-stat">
-          <div class="h-stat-n">30<sup style="font-size:.5em;vertical-align:super;color:var(--gold)">+</sup></div>
-          <div class="h-stat-l">Countries</div>
-        </div>
+        <a href="#enquiry" class="btn-dark mt-8 inline-flex">
+          <span>Book Free 3D Consultation</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       ANIMATED STATS BAR
+  ═══════════════════════════════════ -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stats-watermark" aria-hidden="true">WORLDWIDE</div>
+    <div class="container relative z-10">
+      <div class="stats-grid">
+        <div class="stats-cell"><span class="stats-num"><span class="counter" data-target="950">0</span><sup>+</sup></span><p class="stats-label">Projects</p><p class="stats-sub">Delivered worldwide</p></div>
+        <div class="stats-cell"><span class="stats-num"><span class="counter" data-target="350">0</span><sup>+</sup></span><p class="stats-label">Cities</p><p class="stats-sub">Across India</p></div>
+        <div class="stats-cell"><span class="stats-num"><span class="counter" data-target="30">0</span><sup>+</sup></span><p class="stats-label">Countries</p><p class="stats-sub">International installs</p></div>
+        <div class="stats-cell"><span class="stats-num"><span class="counter" data-target="200">0</span><sup>+</sup></span><p class="stats-label">Artisans</p><p class="stats-sub">Master craftspeople</p></div>
+        <div class="stats-cell"><span class="stats-num"><span class="counter" data-target="26">0</span></span><p class="stats-label">Years</p><p class="stats-sub">Since 1998</p></div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ── GOLD MARQUEE ── -->
-<div class="mband">
-  <div class="mtrack">
-    <div class="mitem">Bespoke Marble Temples <span class="msep">·</span></div>
-    <div class="mitem">Luxury Pooja Rooms <span class="msep">·</span></div>
-    <div class="mitem">Marble Murtis &amp; Idols <span class="msep">·</span></div>
-    <div class="mitem">3D Design Visualization <span class="msep">·</span></div>
-    <div class="mitem">White-Glove Global Delivery <span class="msep">·</span></div>
-    <div class="mitem">200+ Master Artisans <span class="msep">·</span></div>
-    <div class="mitem">Makrana White Marble <span class="msep">·</span></div>
-    <div class="mitem">Since 1998 · Kishangarh <span class="msep">·</span></div>
-    <div class="mitem">Bespoke Marble Temples <span class="msep">·</span></div>
-    <div class="mitem">Luxury Pooja Rooms <span class="msep">·</span></div>
-    <div class="mitem">Marble Murtis &amp; Idols <span class="msep">·</span></div>
-    <div class="mitem">3D Design Visualization <span class="msep">·</span></div>
-    <div class="mitem">White-Glove Global Delivery <span class="msep">·</span></div>
-    <div class="mitem">200+ Master Artisans <span class="msep">·</span></div>
-    <div class="mitem">Makrana White Marble <span class="msep">·</span></div>
-    <div class="mitem">Since 1998 · Kishangarh <span class="msep">·</span></div>
-  </div>
-</div>
+  <!-- ═══════════════════════════════════
+       PROJECTS / PORTFOLIO
+  ═══════════════════════════════════ -->
+  <section class="section bg-ivory" id="projects">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Portfolio</span>
+          <div class="divider-orn"></div>
+          <h2 class="section-title">Sacred Spaces<br>We've Created</h2>
+        </div>
+        <a href="/our-creation" class="btn-dark self-end">
+          <span>Full Portfolio</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
 
-<!-- ── TRUST RIBBON ── -->
-<div class="trust-ribbon">
-  <div class="trust-inner" style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,64px);">
-    <div class="tr-item">
-      <div class="tr-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div><div class="tr-label">5-Year Warranty</div><div class="tr-sub">On all craftsmanship</div></div>
-    </div>
-    <div class="tr-item">
-      <div class="tr-ico"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-      <div><div class="tr-label">4.9 ★ Google</div><div class="tr-sub">950+ reviews</div></div>
-    </div>
-    <div class="tr-item">
-      <div class="tr-ico"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-      <div><div class="tr-label">Global Delivery</div><div class="tr-sub">30+ countries</div></div>
-    </div>
-    <div class="tr-item">
-      <div class="tr-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-      <div><div class="tr-label">24-Hr Response</div><div class="tr-sub">Expert consultation</div></div>
-    </div>
-    <div class="tr-item">
-      <div class="tr-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <div><div class="tr-label">200+ Artisans</div><div class="tr-sub">7 generations</div></div>
-    </div>
-  </div>
-</div>
+      <!-- Filter Tabs -->
+      <div class="proj-tabs" role="tablist" data-reveal>
+        <button class="proj-tab active" role="tab" onclick="filterProjects(this,'all')">All</button>
+        <button class="proj-tab" role="tab" onclick="filterProjects(this,'residential')">Residential</button>
+        <button class="proj-tab" role="tab" onclick="filterProjects(this,'international')">International</button>
+        <button class="proj-tab" role="tab" onclick="filterProjects(this,'communal')">Communal</button>
+      </div>
 
-<!-- ══════════════════════
-     HERITAGE / ABOUT
-══════════════════════ -->
-<section class="section" style="background:var(--ivory);">
-  <div class="container">
-    <div class="heritage-grid">
-      <div class="heritage-imgs reveal">
-        <div class="h-main">
-          <img src="https://arihantdivinearts.com/uploads/settings/1776272068679-530568.jpeg" alt="Master artisan" onerror="this.src='https://images.unsplash.com/photo-1609174604547-7c9e9e8c3cb1?w=800&q=80'">
+      <div class="proj-grid" id="projGrid" data-reveal data-delay="100">
+        <div class="proj-card" data-cat="residential">
+          <div class="proj-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=80" alt="Delhi NCR" onerror="this.style.background='#C8B89A'"></div>
+          <div class="proj-info"><p class="proj-loc">Delhi NCR · Residential</p><h3 class="proj-name">Shri Ram Krishna Mandir</h3></div>
         </div>
-        <div class="h-inset">
-          <img src="https://images.unsplash.com/photo-1612528443702-f6741f70a049?w=400&q=80" alt="Detail carving" onerror="this.style.background='#C8B89A'">
+        <div class="proj-card" data-cat="residential">
+          <div class="proj-img"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=700&q=80" alt="Jaipur" onerror="this.style.background='#B8A880'"></div>
+          <div class="proj-info"><p class="proj-loc">Jaipur, Rajasthan · Residential</p><h3 class="proj-name">Digamber Jain Mandir</h3></div>
         </div>
-        <div class="h-badge">
-          <span class="h-badge-n">26</span>
-          <span class="h-badge-t">Years</span>
-        </div>
-      </div>
-      <div class="reveal d2">
-        <span class="eyebrow">Our Heritage</span>
-        <div class="orn"><div class="orn-line"></div><div class="orn-diamond"></div></div>
-        <h2 class="display" style="font-size:clamp(28px,5vw,52px);margin-bottom:16px;">Seven Generations<br>of Devotional Craft</h2>
-        <p style="font-size:15px;line-height:1.9;color:var(--ink-light);margin-bottom:14px;">Rooted in Kishangarh — India's marble capital — our family has spent seven generations mastering the sacred art of marble temple creation.</p>
-        <p style="font-size:15px;line-height:1.9;color:var(--ink-light);">We combine ancient hand-carving techniques with modern 3D visualization so your sacred space is perfected before a single chisel touches marble.</p>
-        <div class="h-stats">
-          <div class="h-sblock"><div class="h-sn">200<sup style="font-size:.52em;color:var(--gold)">+</sup></div><div class="h-sl">Master Artisans</div></div>
-          <div class="h-sblock"><div class="h-sn">5,000</div><div class="h-sl">Hours / Project</div></div>
-          <div class="h-sblock"><div class="h-sn">950<sup style="font-size:.52em;color:var(--gold)">+</sup></div><div class="h-sl">Projects Delivered</div></div>
-          <div class="h-sblock"><div class="h-sn">30<sup style="font-size:.52em;color:var(--gold)">+</sup></div><div class="h-sl">Countries Served</div></div>
-        </div>
-        <a href="/about-us" class="btn-do btn-dark"><span>Our Story</span><svg class="ai" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════
-     COLLECTIONS
-══════════════════════ -->
-<section class="section" style="background:var(--ivory-w);padding-top:0;">
-  <div class="container">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:clamp(28px,5vw,52px);flex-wrap:wrap;" class="reveal">
-      <div>
-        <span class="eyebrow">Collections</span>
-        <div class="orn" style="margin-bottom:10px;"><div class="orn-line"></div><div class="orn-diamond"></div></div>
-        <h2 class="display" style="font-size:clamp(26px,4.5vw,48px);">Crafted for Every<br>Sacred Space</h2>
-      </div>
-      <a href="/our-creation" class="btn-do btn-dark" style="align-self:flex-end;flex-shrink:0;"><span>All Collections</span><svg class="ai" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-    <div class="coll-grid reveal">
-      <div class="coll-card"><div class="coll-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Small" onerror="this.style.background='#C8B89A'"></div><div class="coll-info"><div class="coll-sz">Upto 50 Sqft</div><div class="coll-name">Small Pooja<br>Rooms</div><div class="coll-note">Intimate elegance</div></div></div>
-      <div class="coll-card"><div class="coll-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Medium" onerror="this.style.background='#B8A880'"></div><div class="coll-info"><div class="coll-sz">Upto 80 Sqft</div><div class="coll-name">Medium Pooja<br>Rooms</div><div class="coll-note">Perfectly balanced</div></div></div>
-      <div class="coll-card"><div class="coll-img"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80" alt="Grand" onerror="this.style.background='#A89870'"></div><div class="coll-info"><div class="coll-sz">Upto 120 Sqft</div><div class="coll-name">Grand Pooja<br>Rooms</div><div class="coll-note">Commanding grandeur</div></div></div>
-      <div class="coll-card"><div class="coll-img"><img src="https://images.unsplash.com/photo-1536599424071-0b215a388ba7?w=600&q=80" alt="Communal" onerror="this.style.background='#988860'"></div><div class="coll-info"><div class="coll-sz">150+ Sqft</div><div class="coll-name">Communal<br>Temples</div><div class="coll-note">Monumental presence</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════
-     PRICING — Like Tilak
-══════════════════════ -->
-<section class="section" style="background:var(--ivory);">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:clamp(28px,5vw,48px);">
-      <span class="eyebrow" style="justify-content:center;">Pricing</span>
-      <div class="orn" style="justify-content:center;margin:16px 0 12px;"><div class="orn-line" style="background:linear-gradient(to left,var(--gold),transparent)"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
-      <h2 class="display" style="font-size:clamp(26px,4.5vw,48px);">Pooja Room for<br>Every Budget</h2>
-      <p style="font-size:14px;color:var(--ink-light);margin-top:10px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.8;">Timeless designs crafted to fit every vision — from intimate shrines to grand sanctuaries.</p>
-    </div>
-    <div class="price-grid reveal">
-      <div class="price-card" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
-        <div class="price-img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500&q=80" alt="3ft Temple" onerror="this.style.background='#E8DDD0'"></div>
-        <div class="price-body">
-          <div class="price-from">Starting ₹1.5 Lakh</div>
-          <div class="price-name">3ft Wide<br>Temples</div>
-          <div class="price-desc">Compact, elegant, full detail</div>
-        </div>
-      </div>
-      <div class="price-card" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
-        <div class="popular-tag">Popular</div>
-        <div class="price-img"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=500&q=80" alt="4ft Temple" onerror="this.style.background='#D8CBBA'"></div>
-        <div class="price-body">
-          <div class="price-from">Starting ₹3.5 Lakh</div>
-          <div class="price-name">4ft Wide<br>Temples</div>
-          <div class="price-desc">Most popular home size</div>
-        </div>
-      </div>
-      <div class="price-card" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
-        <div class="price-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" alt="5ft Temple" onerror="this.style.background='#C8B89A'"></div>
-        <div class="price-body">
-          <div class="price-from">Starting ₹7 Lakh</div>
-          <div class="price-name">5ft Wide<br>Temples</div>
-          <div class="price-desc">Grand statement piece</div>
-        </div>
-      </div>
-      <div class="price-card" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
-        <div class="price-img"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=80" alt="6ft Temple" onerror="this.style.background='#B8A880'"></div>
-        <div class="price-body">
-          <div class="price-from">On Enquiry</div>
-          <div class="price-name">6ft &amp; Beyond<br>Temples</div>
-          <div class="price-desc">Monumental masterwork</div>
+        <div class="proj-card" data-cat="international">
+          <div class="proj-img"><img src="https://arihantdivinearts.com/images/home%20page/internatinol%203.jfif" alt="Australia" onerror="this.src='https://images.unsplash.com/photo-1536599424071-0b215a388ba7?w=700&q=80'"></div>
+          <div class="proj-info"><p class="proj-loc">Sydney, Australia · International</p><h3 class="proj-name">Private Sacred Space</h3></div>
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:32px;" class="reveal">
-      <a href="/our-creation" class="btn-do btn-dark"><span>Explore Full Catalogue</span><svg class="ai" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════════════
-     PROCESS
-══════════════════════ -->
-<section class="process-bg">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto;">
-      <span class="eyebrow" style="color:var(--gold);justify-content:center;">How It Works</span>
-      <div class="orn" style="justify-content:center;margin:16px 0 14px;"><div class="orn-line" style="background:linear-gradient(to left,var(--gold),transparent)"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
-      <h2 class="display" style="font-size:clamp(26px,4.5vw,48px);color:#fff;">Your Temple in<br>5 Sacred Steps</h2>
-      <p style="font-size:14px;color:rgba(255,255,255,.36);margin-top:10px;line-height:1.8;">From first conversation to white-glove installation — seamlessly guided.</p>
-    </div>
-    <!-- Mobile vertical steps -->
-    <div class="proc-steps-mobile reveal">
-      <div class="proc-step-m"><div class="proc-circle">1</div><div><div class="proc-title">Connect</div><div class="proc-desc">One-on-one call with our expert — no obligation, pure guidance.</div></div></div>
-      <div class="proc-step-m"><div class="proc-circle">2</div><div><div class="proc-title">Explore</div><div class="proc-desc">Choose design, marble grade, carvings and dimensions from our catalogue.</div></div></div>
-      <div class="proc-step-m"><div class="proc-circle">3</div><div><div class="proc-title">Visualize</div><div class="proc-desc">Receive a photorealistic 3D walkthrough before any stone is carved.</div></div></div>
-      <div class="proc-step-m"><div class="proc-circle">4</div><div><div class="proc-title">Craft</div><div class="proc-desc">200+ artisans hand-carve your temple with milestone video updates.</div></div></div>
-      <div class="proc-step-m"><div class="proc-circle">5</div><div><div class="proc-title">Deliver</div><div class="proc-desc">White-glove delivery and expert installation anywhere in the world.</div></div></div>
-    </div>
-    <!-- Desktop horizontal steps -->
-    <div class="proc-steps-desktop">
-      <div class="p-step-d reveal"><div class="proc-circle">1</div><div class="proc-title">Connect</div><div class="proc-desc">One-on-one call with our experts.</div></div>
-      <div class="p-step-d reveal d1"><div class="proc-circle">2</div><div class="proc-title">Explore</div><div class="proc-desc">Choose design and marble grade.</div></div>
-      <div class="p-step-d reveal d2"><div class="proc-circle">3</div><div class="proc-title">Visualize</div><div class="proc-desc">3D walkthrough before carving.</div></div>
-      <div class="p-step-d reveal d3"><div class="proc-circle">4</div><div class="proc-title">Craft</div><div class="proc-desc">200+ artisans hand-carve with updates.</div></div>
-      <div class="p-step-d reveal d4"><div class="proc-circle">5</div><div class="proc-title">Deliver</div><div class="proc-desc">White-glove global installation.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════
-     3D TECHNOLOGY
-══════════════════════ -->
-<div class="tech-wrap">
-  <div class="tech-img-side reveal">
-    <img src="https://images.unsplash.com/photo-1612528443702-f6741f70a049?w=900&q=85" alt="3D Visualization" onerror="this.style.background='#2E2920'">
-    <div class="tech-badge">
-      <div class="tech-badge-l">Technology</div>
-      <div class="tech-badge-v">3D Photorealistic Design</div>
-    </div>
-  </div>
-  <div class="tech-body-side">
-    <div class="reveal d2">
-      <span class="eyebrow">Visualize Before We Carve</span>
-      <div class="orn"><div class="orn-line"></div><div class="orn-diamond"></div></div>
-      <h2 class="display" style="font-size:clamp(24px,4vw,46px);margin-bottom:14px;">See It in Perfect<br>Detail First</h2>
-      <p style="font-size:15px;line-height:1.9;color:var(--ink-light);">Experience your sacred space in breathtaking photorealistic detail — every arch, every carving, every light reflection — exactly as it will look in your home.</p>
-      <div class="tech-feats">
-        <div class="t-feat"><div class="t-feat-ico"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div><div class="t-feat-t">360° Temple Walkthrough</div><div class="t-feat-d">Rotate and explore every carved detail from any angle before committing.</div></div></div>
-        <div class="t-feat"><div class="t-feat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div><div><div class="t-feat-t">Real Marble Texture</div><div class="t-feat-d">See actual Makrana marble veining on your design — exactly what you'll receive.</div></div></div>
-        <div class="t-feat"><div class="t-feat-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><div class="t-feat-t">In-Room Preview</div><div class="t-feat-d">See how your temple fits your actual room — zero surprises on delivery day.</div></div></div>
+  <!-- ═══════════════════════════════════
+       MARBLE TYPES
+  ═══════════════════════════════════ -->
+  <section class="section-dark" id="materials">
+    <div class="container">
+      <div data-reveal>
+        <span class="eyebrow-light">Material Excellence</span>
+        <div class="divider-orn"></div>
+        <h2 class="section-title-light">The Marble<br>We Work With</h2>
+        <p class="text-white/40 text-sm md:text-base max-w-md mt-2 font-body">Only the finest grades from Rajasthan — purity, translucency and grain that stand centuries.</p>
       </div>
-      <a href="#enquiry" class="btn-do btn-dark"><span>Book Free 3D Consultation</span><svg class="ai" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-  </div>
-</div>
-
-<!-- ══════════════════════
-     STATS
-══════════════════════ -->
-<div class="stats-bg" id="statsBar">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-b"><div class="stat-n"><span class="counter" data-t="950">0</span><sup>+</sup></div><div class="stat-l">Projects</div><div class="stat-sl">Across India & abroad</div></div>
-      <div class="stat-b"><div class="stat-n"><span class="counter" data-t="350">0</span><sup>+</sup></div><div class="stat-l">Cities</div><div class="stat-sl">Every corner of India</div></div>
-      <div class="stat-b"><div class="stat-n"><span class="counter" data-t="30">0</span><sup>+</sup></div><div class="stat-l">Countries</div><div class="stat-sl">International installations</div></div>
-      <div class="stat-b"><div class="stat-n"><span class="counter" data-t="200">0</span><sup>+</sup></div><div class="stat-l">Artisans</div><div class="stat-sl">Master craftspeople</div></div>
-      <div class="stat-b" style="grid-column:1/-1;border-bottom:none;"><div class="stat-n" style="justify-content:center;"><span class="counter" data-t="26">0</span></div><div class="stat-l">Years of Excellence</div><div class="stat-sl">Since 1998</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════
-     PROJECTS
-══════════════════════ -->
-<section class="section" style="background:var(--ivory);">
-  <div class="container">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;" class="reveal">
-      <div>
-        <span class="eyebrow">Portfolio</span>
-        <div class="orn" style="margin-bottom:10px;"><div class="orn-line"></div><div class="orn-diamond"></div></div>
-        <h2 class="display" style="font-size:clamp(26px,4vw,46px);">Sacred Spaces<br>We've Created</h2>
+    <div class="marble-grid mt-10 md:mt-14" data-reveal data-delay="100">
+      <div class="marble-card" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="marble-img"><img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=700&q=80" alt="Makrana White" onerror="this.style.background='#8C8C8C'"></div>
+        <div class="marble-overlay"><p class="marble-grade">Premium · Nagaur</p><h3 class="marble-name">Makrana White</h3><p class="marble-origin">Rajasthan, India</p><span class="marble-cta">Enquire →</span></div>
       </div>
-      <a href="/our-creation" class="btn-do btn-dark" style="align-self:flex-end;flex-shrink:0;"><span>Full Portfolio</span><svg class="ai" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <div class="marble-card" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="marble-img"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=700&q=80" alt="Albeta" onerror="this.style.background='#6A6058'"></div>
+        <div class="marble-overlay"><p class="marble-grade">Heritage · Kishangarh</p><h3 class="marble-name">Albeta</h3><p class="marble-origin">Rajasthan, India</p><span class="marble-cta">Enquire →</span></div>
+      </div>
+      <div class="marble-card" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="marble-img"><img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=700&q=80" alt="Morwad White" onerror="this.style.background='#7A7060'"></div>
+        <div class="marble-overlay"><p class="marble-grade">Export · Pali</p><h3 class="marble-name">Morwad White</h3><p class="marble-origin">Rajasthan, India</p><span class="marble-cta">Enquire →</span></div>
+      </div>
+      <div class="marble-card" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">
+        <div class="marble-img"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=80" alt="Custom Inlay" onerror="this.style.background='#504840'"></div>
+        <div class="marble-overlay"><p class="marble-grade">Signature · Multi-stone</p><h3 class="marble-name">Custom Inlay</h3><p class="marble-origin">Parchinkari Artistry</p><span class="marble-cta">Enquire →</span></div>
+      </div>
     </div>
-    <div class="proj-tabs">
-      <button class="ptab active" onclick="filterP(this,'all')">All Projects</button>
-      <button class="ptab" onclick="filterP(this,'residential')">Residential</button>
-      <button class="ptab" onclick="filterP(this,'international')">International</button>
-      <button class="ptab" onclick="filterP(this,'communal')">Communal</button>
-    </div>
-    <div class="proj-grid reveal">
-      <div class="proj-card" data-cat="residential"><div class="proj-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Delhi" onerror="this.style.background='#C8B89A'"></div><div class="proj-body"><div class="proj-loc">Delhi NCR · Residential</div><div class="proj-name">Shri Ram Krishna Mandir</div></div></div>
-      <div class="proj-card" data-cat="residential"><div class="proj-img"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=600&q=80" alt="Jaipur" onerror="this.style.background='#B8A880'"></div><div class="proj-body"><div class="proj-loc">Jaipur, Rajasthan · Residential</div><div class="proj-name">Digamber Jain Mandir</div></div></div>
-      <div class="proj-card" data-cat="international"><div class="proj-img"><img src="https://arihantdivinearts.com/images/home%20page/internatinol%203.jfif" alt="Sydney" onerror="this.src='https://images.unsplash.com/photo-1536599424071-0b215a388ba7?w=600&q=80'"></div><div class="proj-body"><div class="proj-loc">Sydney, Australia · International</div><div class="proj-name">Private Sacred Space</div></div></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════════════
-     MARBLE TYPES
-══════════════════════ -->
-<section class="marble-bg">
-  <div class="container">
-    <div class="reveal">
-      <span class="eyebrow" style="color:var(--gold)">Material Excellence</span>
-      <div class="orn"><div class="orn-line"></div><div class="orn-diamond"></div></div>
-      <h2 class="display" style="font-size:clamp(26px,4vw,46px);color:#fff;margin-bottom:10px;">The Marble<br>We Work With</h2>
-      <p style="font-size:14px;color:rgba(255,255,255,.36);max-width:500px;line-height:1.8;">Only the finest grades from Rajasthan — purity, translucency and grain that stand the test of centuries.</p>
-    </div>
-  </div>
-  <div style="margin-top:44px;">
-    <div class="marble-grid">
-      <div class="m-card reveal"><div class="m-img"><img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80" alt="Makrana White" onerror="this.style.background='#8C8C8C'"></div><div class="m-info"><div class="m-grade">Premium · Nagaur</div><div class="m-name">Makrana White</div><div class="m-origin">Rajasthan, India</div></div></div>
-      <div class="m-card reveal d1"><div class="m-img"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80" alt="Albeta" onerror="this.style.background='#6A6058'"></div><div class="m-info"><div class="m-grade">Heritage · Kishangarh</div><div class="m-name">Albeta</div><div class="m-origin">Rajasthan, India</div></div></div>
-      <div class="m-card reveal d2"><div class="m-img"><img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=600&q=80" alt="Morwad" onerror="this.style.background='#7A7060'"></div><div class="m-info"><div class="m-grade">Export · Pali</div><div class="m-name">Morwad White</div><div class="m-origin">Rajasthan, India</div></div></div>
-      <div class="m-card reveal d3"><div class="m-img"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Custom Inlay" onerror="this.style.background='#504840'"></div><div class="m-info"><div class="m-grade">Signature · Multi-stone</div><div class="m-name">Custom Inlay</div><div class="m-origin">Parchinkari Artistry</div></div></div>
-    </div>
-  </div>
-</section>
+  <!-- ═══════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════ -->
+  <section class="section-dark" id="testimonials">
+    <div class="container">
+      <!-- Rating Hero -->
+      <div class="testi-top" data-reveal>
+        <div>
+          <span class="eyebrow-light">Client Stories</span>
+          <div class="divider-orn"></div>
+          <h2 class="section-title-light">Words of<br>Our Devotees</h2>
+        </div>
+        <div class="rating-block">
+          <span class="rating-score">4.9</span>
+          <div>
+            <div class="rating-stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="rating-src">Google Rating · 950+ Reviews</p>
+          </div>
+        </div>
+      </div>
 
-<!-- ══════════════════════
-     TESTIMONIALS
-══════════════════════ -->
-<section class="testi-bg">
-  <div class="container">
-    <div class="reveal" style="margin-bottom:36px;">
-      <span class="eyebrow" style="color:var(--gold)">Client Stories</span>
-      <div class="orn"><div class="orn-line"></div><div class="orn-diamond"></div></div>
-      <h2 class="display" style="font-size:clamp(26px,4vw,46px);color:#fff;">Words of<br>Our Devotees</h2>
+      <!-- Cards -->
+      <div class="testi-grid mt-10 md:mt-14">
+        <div class="testi-card" data-reveal>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"The quality of the marble temple is truly divine. Every detail was attended to with extraordinary care — it has transformed our home's spiritual energy completely."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RV</div>
+            <div><p class="testi-name">Rahul Verma</p><p class="testi-loc">Delhi · Google Local Guide</p></div>
+          </div>
+        </div>
+        <div class="testi-card" data-reveal data-delay="100">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Received my murti in perfect condition all the way to London. The packaging was extraordinary — absolutely worth every penny. A lifetime treasure."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SP</div>
+            <div><p class="testi-name">Sushila Patel</p><p class="testi-loc">London, UK</p></div>
+          </div>
+        </div>
+        <div class="testi-card" data-reveal data-delay="200">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"The 3D walkthrough made everything clear before we committed. From first call to installation — perfectly seamless. Highest recommendation without any doubt."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SJ</div>
+            <div><p class="testi-name">S.K. Jain</p><p class="testi-loc">Chennai, India</p></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="rating-hero reveal">
-      <div class="r-score">4.9</div>
-      <div><div class="r-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><div class="r-src">Google Rating · 950+ Verified Reviews</div></div>
-    </div>
-    <div class="testi-grid">
-      <div class="t-card reveal"><div class="t-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="t-quote">"The quality of the marble temple is truly divine. Every detail was attended to with extraordinary care — it has transformed our home's spiritual energy."</p><div class="t-auth"><div class="t-av">RV</div><div><div class="t-name">Rahul Verma</div><div class="t-loc">Delhi · Google Local Guide</div></div></div></div>
-      <div class="t-card reveal d1"><div class="t-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="t-quote">"Received my murti in perfect condition all the way to London. The packaging was extraordinary and the craftsmanship — absolutely worth every penny."</p><div class="t-auth"><div class="t-av">SP</div><div><div class="t-name">Sushila Patel</div><div class="t-loc">London, UK</div></div></div></div>
-      <div class="t-card reveal d2"><div class="t-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="t-quote">"The 3D walkthrough made everything so clear before we committed. From first call to installation — perfectly seamless. Highest recommendation."</p><div class="t-auth"><div class="t-av">SJ</div><div><div class="t-name">S.K. Jain</div><div class="t-loc">Chennai, India</div></div></div></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── PRESS ── -->
-<section class="press-bg">
-  <div class="container">
-    <div class="press-label">As Featured In</div>
+  <!-- ═══════════════════════════════════
+       PRESS
+  ═══════════════════════════════════ -->
+  <div class="press-bar">
+    <p class="press-label">As Featured In</p>
     <div class="press-logos">
       <span class="press-logo">The Times of India</span>
-      <span class="press-logo it">Elle Décor</span>
+      <span class="press-sep">·</span>
+      <span class="press-logo italic">Elle Décor</span>
+      <span class="press-sep">·</span>
       <span class="press-logo">Outlook Business</span>
-      <span class="press-logo it">GoodHomes</span>
+      <span class="press-sep">·</span>
+      <span class="press-logo italic">GoodHomes</span>
+      <span class="press-sep">·</span>
       <span class="press-logo">Business Standard</span>
     </div>
   </div>
-</section>
 
-<!-- ══════════════════════
-     WHY US
-══════════════════════ -->
-<section class="section" style="background:var(--ivory);">
-  <div class="container">
-    <div class="why-grid">
-      <div class="reveal">
-        <span class="eyebrow">Why Choose Us</span>
-        <div class="orn"><div class="orn-line"></div><div class="orn-diamond"></div></div>
-        <h2 class="display" style="font-size:clamp(26px,4vw,46px);margin-bottom:14px;">Why 950+ Families<br>Trusted Us</h2>
-        <p style="font-size:15px;line-height:1.9;color:var(--ink-light);margin-bottom:28px;">When you invest ₹20 Lakh or more in a sacred space, you need complete certainty — in quality, delivery, and the people you trust with your vision.</p>
-        <div class="cert-row">
-          <div class="cert-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>5-Year Warranty</span></div>
-          <div class="cert-badge"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>ISO Certified</span></div>
-          <div class="cert-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>4.9★ Verified</span></div>
-        </div>
-      </div>
-      <div class="why-cards reveal d2">
-        <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="why-t">Dedicated Consultant</div><div class="why-d">One expert guides you from first call to final installation.</div></div>
-        <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="why-t">3D Before Commit</div><div class="why-d">Full photorealistic render before any marble is sourced.</div></div>
-        <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="why-t">Milestone Updates</div><div class="why-d">Photo/video updates throughout — complete transparency.</div></div>
-        <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div class="why-t">White-Glove Delivery</div><div class="why-d">Insured shipping and expert installation worldwide.</div></div>
-        <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="why-t">5-Year Warranty</div><div class="why-d">Comprehensive craftsmanship guarantee — in writing.</div></div>
-        <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="why-t">Made with Devotion</div><div class="why-d">Prayer and intent infused into every carved detail.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════
-     ENQUIRY FORM
-══════════════════════ -->
-<section class="enq-bg" id="enquiry">
-  <div class="container">
-    <div class="enq-grid">
-      <div class="reveal">
-        <span class="eyebrow">Begin Your Journey</span>
-        <div class="orn"><div class="orn-line"></div><div class="orn-diamond"></div></div>
-        <h2 class="display" style="font-size:clamp(24px,4vw,44px);margin-bottom:12px;">Let's Build Your<br><em style="font-style:italic;">Sacred Space</em></h2>
-        <p style="font-size:15px;line-height:1.9;color:var(--ink-light);margin-bottom:28px;">Share your vision — our experts guide you from first concept to white-glove installation.</p>
-        <div class="enq-contacts">
-          <div class="enq-ci"><div class="enq-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="enq-lab">Call / WhatsApp</div><div class="enq-val"><a href="tel:+919319374633">+91 93193 74633</a></div></div></div>
-          <div class="enq-ci"><div class="enq-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="enq-lab">Email</div><div class="enq-val"><a href="mailto:sales@arihantheritage.com">sales@arihantheritage.com</a></div></div></div>
-          <div class="enq-ci"><div class="enq-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke-linecap="round"/></svg></div><div><div class="enq-lab">Showroom</div><div class="enq-val">Kishangarh, Rajasthan, India</div></div></div>
-        </div>
-      </div>
-      <div class="reveal d2">
-        <div class="form-box">
-          <div class="form-box-t">Request a Consultation</div>
-          <div class="form-box-s">Our expert will reach out within 24 hours — no pressure, just guidance.</div>
-          <div class="f-row">
-            <div class="f-group"><label>Full Name *</label><input type="text" id="fn" placeholder="Your full name"></div>
-            <div class="f-group"><label>Phone / WhatsApp *</label><input type="tel" id="fp" placeholder="+91 XXXXX XXXXX"></div>
+  <!-- ═══════════════════════════════════
+       WHY US
+  ═══════════════════════════════════ -->
+  <section class="section bg-ivory" id="why">
+    <div class="container">
+      <div class="why-grid">
+        <div data-reveal>
+          <span class="eyebrow">Why Choose Us</span>
+          <div class="divider-orn"></div>
+          <h2 class="section-title">Why 950+ Families<br>Trusted Us</h2>
+          <p class="body-text mt-4">When you invest ₹20 Lakh or more in a sacred space, you need complete certainty — in quality, in delivery, and in the people you entrust with your vision.</p>
+          <div class="cert-badges mt-8">
+            <div class="cert-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>5-Year Warranty</span>
+            </div>
+            <div class="cert-badge">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>ISO Certified</span>
+            </div>
+            <div class="cert-badge">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.9★ Verified</span>
+            </div>
           </div>
-          <div class="f-group"><label>Email Address</label><input type="email" id="fe" placeholder="your@email.com"></div>
-          <div class="f-row">
-            <div class="f-group"><label>City</label><input type="text" id="fc" placeholder="Your city"></div>
-            <div class="f-group"><label>Project Type</label><select id="ft"><option value="">Select type</option><option>Home Pooja Room</option><option>Marble Temple (Freestanding)</option><option>Communal / Public Temple</option><option>Marble Murtis / Idols</option></select></div>
+        </div>
+        <div class="why-cards" data-reveal data-delay="120">
+          <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4 class="why-title">Dedicated Consultant</h4><p class="why-desc">One expert guides you from first call to final installation.</p></div>
+          <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><h4 class="why-title">3D Before Commit</h4><p class="why-desc">Full photorealistic render before any marble is sourced.</p></div>
+          <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><h4 class="why-title">Milestone Updates</h4><p class="why-desc">Photo & video updates throughout — complete transparency.</p></div>
+          <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h4 class="why-title">White-Glove Delivery</h4><p class="why-desc">Insured shipping and expert installation worldwide.</p></div>
+          <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4 class="why-title">5-Year Warranty</h4><p class="why-desc">Comprehensive craftsmanship guarantee — in writing.</p></div>
+          <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h4 class="why-title">Made with Devotion</h4><p class="why-desc">Prayer and intent infused into every carved detail.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       ENQUIRY FORM
+  ═══════════════════════════════════ -->
+  <section class="section bg-ivory-2" id="enquiry">
+    <div class="container">
+      <div class="enq-grid">
+        <!-- Left Info -->
+        <div data-reveal>
+          <span class="eyebrow">Begin Your Journey</span>
+          <div class="divider-orn"></div>
+          <h2 class="section-title">Let's Build Your<br><em class="font-display italic font-light">Sacred Space</em></h2>
+          <p class="body-text mt-4 mb-8">Share your vision — our experts guide you from first concept to white-glove installation.</p>
+          <div class="enq-contacts">
+            <div class="enq-contact-item">
+              <div class="enq-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><p class="enq-label">Call / WhatsApp</p><a href="tel:+919319374633" class="enq-value">+91 93193 74633</a></div>
+            </div>
+            <div class="enq-contact-item">
+              <div class="enq-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><p class="enq-label">Email</p><a href="mailto:sales@arihantheritage.com" class="enq-value">sales@arihantheritage.com</a></div>
+            </div>
+            <div class="enq-contact-item">
+              <div class="enq-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><p class="enq-label">Showroom</p><p class="enq-value-plain">Kishangarh, Rajasthan, India</p></div>
+            </div>
           </div>
-          <div class="f-group"><label>Budget Range</label><select id="fb"><option value="">Select range</option><option>₹10L – ₹25 Lakh</option><option>₹25L – ₹50 Lakh</option><option>₹50L – ₹1 Crore</option><option>₹1 Crore +</option><option>Not sure yet</option></select></div>
-          <div class="f-group"><label>Your Vision</label><textarea id="fm" placeholder="Describe your dream sacred space…"></textarea></div>
-          <button class="f-submit" id="fBtn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            Submit Enquiry
-          </button>
-          <div class="f-success" id="fOk">✦ &nbsp;Thank you. Our expert will contact you within 24 hours.</div>
-          <div class="f-privacy"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your information is private and secure — never shared or sold.</div>
+        </div>
+
+        <!-- Form Box -->
+        <div data-reveal data-delay="150">
+          <div class="form-box">
+            <h3 class="form-title">Request a Consultation</h3>
+            <p class="form-sub">Our expert will reach out within 24 hours — no pressure, just guidance.</p>
+            <div class="form-row">
+              <div class="form-group"><label>Full Name *</label><input type="text" id="fn" placeholder="Your full name"></div>
+              <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" id="fp" placeholder="+91 XXXXX XXXXX"></div>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="fe" placeholder="your@email.com"></div>
+            <div class="form-row">
+              <div class="form-group"><label>City</label><input type="text" id="fc" placeholder="Your city"></div>
+              <div class="form-group"><label>Project Type</label>
+                <select id="ft"><option value="">Select type</option><option>Home Pooja Room</option><option>Marble Temple (Freestanding)</option><option>Communal / Public Temple</option><option>Marble Murtis / Idols</option></select>
+              </div>
+            </div>
+            <div class="form-group"><label>Budget Range</label>
+              <select id="fb"><option value="">Select range</option><option>₹10L – ₹25 Lakh</option><option>₹25L – ₹50 Lakh</option><option>₹50L – ₹1 Crore</option><option>₹1 Crore +</option><option>Not sure yet</option></select>
+            </div>
+            <div class="form-group form-group--full"><label>Your Vision</label><textarea id="fm" placeholder="Describe your dream sacred space — size, style, deity, timeline…" rows="3"></textarea></div>
+            <button class="form-submit" id="formSubmit">
+              <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Submit Enquiry
+            </button>
+            <div class="form-success" id="formSuccess">✦ &nbsp;Thank you. Our expert will contact you within 24 hours.</div>
+            <div class="form-privacy">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Your information is private & secure — never shared or sold.
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── INSTAGRAM CTA ── -->
-<div class="insta-bg">
-  <div class="container">
-    <div class="insta-handle">@ArihantHeritage</div>
-    <h2>Follow Our Sacred<br><em>Creations</em></h2>
-    <div class="insta-btns" style="margin-top:24px;">
-      <a href="https://instagram.com" target="_blank" class="insta-btn btn-white-o">Instagram →</a>
-      <a href="https://youtube.com" target="_blank" class="insta-btn btn-gold-o">YouTube →</a>
-    </div>
-  </div>
-</div>
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <p class="footer-brand-name">Arihant Heritage</p>
+          <p class="footer-brand-sub">Luxury Marble Temples · Since 1998</p>
+          <p class="footer-brand-desc">Inspired by devotion, crafted to bring divine presence home. Delivering premium marble temples worldwide from the heart of Rajasthan.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="footer-social-link">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="footer-social-link">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.57A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+            <a href="https://wa.me/919116121958" aria-label="WhatsApp" class="footer-social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
 
-<!-- ══════════════════════
-     FOOTER
-══════════════════════ -->
-<footer>
-  <div class="container">
-    <!-- Desktop grid / Mobile stacked -->
-    <div class="foot-grid" id="footGrid" style="padding-bottom:clamp(32px,5vw,56px);border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:0;">
-      <div class="foot-brand" style="padding-bottom:24px;">
-        <div class="foot-brand-name">Arihant Heritage</div>
-        <div class="foot-brand-sub">Luxury Marble Temples · Since 1998</div>
-        <p class="foot-brand-desc">Inspired by devotion, crafted to bring divine presence home. Delivering premium marble temples worldwide from the heart of Rajasthan.</p>
-        <div class="foot-social">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.57A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
-          <a href="https://wa.me/919116121958" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+        <!-- Col: Explore -->
+        <div class="footer-col" id="footerCol1">
+          <button class="footer-col-head" aria-expanded="false">Explore <span class="footer-col-icon">+</span></button>
+          <ul class="footer-col-list">
+            <li><a href="/our-process">How It Works</a></li>
+            <li><a href="/our-creation">Our Creations</a></li>
+            <li><a href="/customize-design">Custom Design</a></li>
+            <li><a href="/global-shipping">Global Shipping</a></li>
+            <li><a href="/blog">Journal</a></li>
+          </ul>
+        </div>
+
+        <!-- Col: Company -->
+        <div class="footer-col" id="footerCol2">
+          <button class="footer-col-head" aria-expanded="false">Company <span class="footer-col-icon">+</span></button>
+          <ul class="footer-col-list">
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/our-clients">Our Clients</a></li>
+            <li><a href="/international-projects">Int'l Projects</a></li>
+            <li><a href="/domestic-projects">India Projects</a></li>
+            <li><a href="/careers">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Col: Contact -->
+        <div class="footer-col" id="footerCol3">
+          <button class="footer-col-head" aria-expanded="false">Contact <span class="footer-col-icon">+</span></button>
+          <ul class="footer-col-list">
+            <li><a href="tel:+919319374633">+91 93193 74633</a></li>
+            <li><a href="https://wa.me/919116121958">WhatsApp</a></li>
+            <li><a href="mailto:sales@arihantheritage.com">Email Us</a></li>
+            <li><a href="/contact-us">Visit Showroom</a></li>
+            <li><a href="/page/page-privacy-policy">Privacy Policy</a></li>
+          </ul>
         </div>
       </div>
-      <div class="foot-col" id="fc1">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="/our-process">How It Works</a></li>
-          <li><a href="/our-creation">Our Creations</a></li>
-          <li><a href="/customize-design">Custom Design</a></li>
-          <li><a href="/global-shipping">Global Shipping</a></li>
-          <li><a href="/blog">Journal</a></li>
-        </ul>
-      </div>
-      <div class="foot-col" id="fc2">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about-us">About Us</a></li>
-          <li><a href="/our-clients">Our Clients</a></li>
-          <li><a href="/international-projects">Int'l Projects</a></li>
-          <li><a href="/domestic-projects">India Projects</a></li>
-          <li><a href="/careers">Careers</a></li>
-        </ul>
-      </div>
-      <div class="foot-col" id="fc3">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+919319374633">+91 93193 74633</a></li>
-          <li><a href="https://wa.me/919116121958">WhatsApp</a></li>
-          <li><a href="mailto:sales@arihantheritage.com">Email Us</a></li>
-          <li><a href="/contact-us">Visit Showroom</a></li>
-          <li><a href="/page/page-privacy-policy">Privacy Policy</a></li>
-        </ul>
+
+      <div class="footer-bottom">
+        <p>© 2025 Arihant Heritage. Crafted with devotion in Kishangarh, Rajasthan.</p>
+        <div class="footer-bottom-links">
+          <a href="/page/page-privacy-policy">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
       </div>
     </div>
-    <div class="foot-bottom">
-      <p>© 2025 Arihant Heritage. Crafted with devotion in Kishangarh, Rajasthan.</p>
-      <div class="foot-links"><a href="/page/page-privacy-policy">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
-    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════
+       FLOATING ELEMENTS
+  ═══════════════════════════════════ -->
+  <!-- WhatsApp (desktop) -->
+  <a href="https://wa.me/919116121958" class="wa-float hidden md:flex" id="waFloat" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Mobile Bottom Bar -->
+  <div class="mobile-bar md:hidden" id="mobileBar">
+    <a href="tel:+919319374633" class="mobile-bar-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+    <a href="#enquiry" class="mobile-bar-enq" id="mobileBarEnq">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Free Consultation
+    </a>
   </div>
-</footer>
 
-<!-- ── FLOATING WA ── -->
-<a href="https://wa.me/919116121958" class="wa-btn" id="waBtn" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-</a>
-
-<!-- ── MOBILE BOTTOM BAR ── -->
-<div class="m-bar">
-  <a href="tel:+919319374633" class="m-call">
-    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call Now
-  </a>
-  <a href="#enquiry" id="mEnq" class="m-enq">
-    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    Free Consultation
-  </a>
-</div>
-
-<script>
-// ── NAV SCROLL ──
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
-
-// ── DRAWER ──
-const ham = document.getElementById('ham');
-const drawer = document.getElementById('drawer');
-const mask = document.getElementById('mask');
-function openD() {
-  drawer.classList.add('open'); mask.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  const s = ham.querySelectorAll('span');
-  s[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-  s[1].style.opacity = '0';
-  s[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-}
-function closeD() {
-  drawer.classList.remove('open'); mask.classList.remove('open');
-  document.body.style.overflow = '';
-  ham.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-}
-ham.addEventListener('click', openD);
-document.getElementById('drawerX').addEventListener('click', closeD);
-mask.addEventListener('click', closeD);
-drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeD));
-document.getElementById('drawerEnq').addEventListener('click', e => {
-  e.preventDefault(); closeD();
-  setTimeout(() => document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }), 440);
-});
-
-// ── SCROLL REVEAL ──
-const ro = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-
-// ── COUNTERS ──
-function runCtr(el) {
-  const t = +el.dataset.t, dur = 1800, s = performance.now();
-  (function f(n) {
-    const p = Math.min((n - s) / dur, 1);
-    el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * t);
-    if (p < 1) requestAnimationFrame(f);
-  })(s);
-}
-const co = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.counter').forEach(runCtr); co.unobserve(e.target); }});
-}, { threshold: 0.3 });
-const sb = document.getElementById('statsBar');
-if (sb) co.observe(sb);
-
-// ── PROJECT FILTER ──
-function filterP(btn, cat) {
-  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.proj-card').forEach(c => {
-    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
-  });
-}
-
-// ── FORM ──
-document.getElementById('fBtn').addEventListener('click', function() {
-  const n = document.getElementById('fn').value.trim();
-  const p = document.getElementById('fp').value.trim();
-  if (!n) { document.getElementById('fn').focus(); return; }
-  if (!p) { document.getElementById('fp').focus(); return; }
-  this.disabled = true;
-  this.textContent = '✓ Enquiry Sent — We\'ll be in touch within 24 hours';
-  this.style.cssText = 'background:var(--ink);color:var(--ivory);border-color:var(--ink);width:100%;padding:17px;font-family:Tenor Sans,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;cursor:default;';
-  document.getElementById('fOk').style.display = 'block';
-});
-
-// ── MOBILE ENQUIRY SCROLL ──
-document.getElementById('mEnq').addEventListener('click', e => {
-  e.preventDefault();
-  document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' });
-});
-
-// ── WA VISIBILITY ──
-function syncWA() {
-  const wa = document.getElementById('waBtn');
-  if (wa) wa.style.display = window.innerWidth < 768 ? 'none' : 'flex';
-}
-syncWA(); window.addEventListener('resize', syncWA);
-
-// ── FOOTER ACCORDION (mobile only) ──
-['fc1','fc2','fc3'].forEach(id => {
-  const col = document.getElementById(id);
-  if (!col) return;
-  col.querySelector('h4').addEventListener('click', () => {
-    if (window.innerWidth >= 768) return;
-    const open = col.classList.contains('open');
-    document.querySelectorAll('.foot-col').forEach(c => c.classList.remove('open'));
-    if (!open) col.classList.add('open');
-  });
-});
-
-// ── MARBLE → ENQUIRY ──
-document.querySelectorAll('.m-card').forEach(c => c.addEventListener('click', () => document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' })));
-
-// ── PRICING → ENQUIRY ──
-document.querySelectorAll('.price-card').forEach(c => c.style.cursor = 'pointer');
-</script>
+  <!-- Main JS -->
+  <script src="main.js"></script>
 </body>
 </html>
